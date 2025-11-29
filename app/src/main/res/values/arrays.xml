@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="priority_array">
+        <item>Высокий</item>
+        <item>Средний</item>
+        <item>Низкий</item>
+    </string-array>
+
+    <string-array name="category_array">
+        <item>💼 Работа</item>
+        <item>👤 Личное</item>
+        <item>🛒 Покупки</item>
+        <item>💊 Здоровье</item>
+        <item>📌 Другое</item>
+    </string-array>
+</resources>
