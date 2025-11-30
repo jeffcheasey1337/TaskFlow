@@ -6,12 +6,37 @@
         android:id="@+id/action_search"
         android:title="Поиск"
         android:icon="@android:drawable/ic_menu_search"
-        app:showAsAction="always|collapseActionView"
+        app:showAsAction="ifRoom|collapseActionView"
         app:actionViewClass="androidx.appcompat.widget.SearchView"/>
 
     <item
-        android:id="@+id/action_sort_priority"
-        android:title="Фильтр по приоритету"
-        android:icon="@android:drawable/ic_menu_sort_by_size"
+        android:id="@+id/action_calendar"
+        android:title="Календарь"
+        android:icon="@drawable/ic_calendar"
         app:showAsAction="never"/>
+
+    <item
+        android:id="@+id/action_statistics"
+        android:title="Статистика"
+        android:icon="@drawable/ic_chart"
+        app:showAsAction="never"/>
+
+    <item
+        android:id="@+id/action_achievements"
+        android:title="Достижения"
+        android:icon="@drawable/ic_trophy"
+        app:showAsAction="never"/>
+
+    <item
+        android:id="@+id/action_pomodoro"
+        android:title="Помодоро"
+        android:icon="@drawable/ic_timer"
+        app:showAsAction="never"/>
+
+    <item
+        android:id="@+id/action_filter"
+        android:title="Фильтры"
+        android:icon="@drawable/ic_filter"
+        app:showAsAction="never"/>
+
 </menu>

@@ -1,46 +1,56 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView 
+<com.google.android.material.card.MaterialCardView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/taskCard"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_margin="8dp"
-    app:cardCornerRadius="12dp"
-    app:cardElevation="4dp">
+    android:layout_marginBottom="12dp"
+    app:cardCornerRadius="16dp"
+    app:cardElevation="0dp"
+    app:strokeWidth="0dp"
+    android:background="@drawable/glass_card_background"
+    app:cardBackgroundColor="@android:color/transparent"
+    android:foreground="@drawable/ripple_effect">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:padding="16dp"
-        android:gravity="center_vertical">
+        android:gravity="center_vertical"
+        android:background="@drawable/glass_card_background">
 
-        <CheckBox
+        <!-- Checkbox -->
+        <com.google.android.material.checkbox.MaterialCheckBox
             android:id="@+id/checkBox"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:buttonTint="@color/secondary"/>
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:button="@drawable/custom_checkbox"
+            android:layout_marginEnd="12dp"
+            app:buttonTint="@color/ios_blue"/>
 
+        <!-- Task Content -->
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:orientation="vertical"
-            android:layout_marginStart="12dp">
+            android:orientation="vertical">
 
+            <!-- Title with priority indicator -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 android:gravity="center_vertical">
 
-                <TextView
-                    android:id="@+id/categoryBadge"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="💼"
-                    android:textSize="16sp"
-                    android:layout_marginEnd="4dp"/>
+                <View
+                    android:id="@+id/priorityIndicator"
+                    android:layout_width="3dp"
+                    android:layout_height="16dp"
+                    android:layout_marginEnd="8dp"
+                    android:background="@drawable/priority_indicator"
+                    android:backgroundTint="@color/priority_high"/>
 
                 <TextView
                     android:id="@+id/titleText"
@@ -48,65 +58,89 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="Task Title"
-                    android:textSize="16sp"
-                    android:textStyle="bold"
-                    android:textColor="@color/text_primary"/>
+                    android:textSize="17sp"
+                    android:textStyle="normal"
+                    android:textColor="?attr/colorOnSurface"
+                    android:maxLines="2"
+                    android:ellipsize="end"
+                    android:fontFamily="sans-serif-medium"/>
+
             </LinearLayout>
 
-            <TextView
-                android:id="@+id/projectText"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="📁 Project"
-                android:textSize="14sp"
-                android:textColor="@color/text_secondary"
-                android:layout_marginTop="4dp"/>
-
+            <!-- Project and deadline info -->
             <LinearLayout
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                android:layout_marginTop="4dp">
+                android:layout_marginTop="6dp"
+                android:gravity="center_vertical">
 
+                <!-- Project tag -->
                 <TextView
-                    android:id="@+id/priorityText"
+                    android:id="@+id/projectTag"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="⚡ Medium"
-                    android:textSize="12sp"
-                    android:textColor="@color/priority_medium"
-                    android:padding="4dp"/>
+                    android:text="Проект"
+                    android:textSize="13sp"
+                    android:textColor="@color/ios_text_secondary"
+                    android:background="@drawable/project_tag_background"
+                    android:paddingStart="8dp"
+                    android:paddingEnd="8dp"
+                    android:paddingTop="4dp"
+                    android:paddingBottom="4dp"/>
 
+                <!-- Deadline -->
                 <TextView
                     android:id="@+id/deadlineText"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="⏰ 12.12 14:00"
-                    android:textSize="12sp"
-                    android:textColor="@color/text_secondary"
+                    android:text="• Сегодня 18:00"
+                    android:textSize="13sp"
+                    android:textColor="@color/ios_text_secondary"
                     android:layout_marginStart="8dp"
-                    android:padding="4dp"
+                    android:visibility="gone"/>
+
+                <!-- Reminder icon -->
+                <ImageView
+                    android:id="@+id/reminderIcon"
+                    android:layout_width="14dp"
+                    android:layout_height="14dp"
+                    android:src="@drawable/ic_bell"
+                    android:layout_marginStart="8dp"
+                    app:tint="@color/ios_blue"
                     android:visibility="gone"/>
             </LinearLayout>
+
         </LinearLayout>
 
-        <ImageView
-            android:id="@+id/editIcon"
-            android:layout_width="24dp"
-            android:layout_height="24dp"
-            android:src="@android:drawable/ic_menu_edit"
-            android:tint="@color/secondary"
-            android:clickable="true"
-            android:focusable="true"
-            android:layout_marginEnd="8dp"/>
+        <!-- Action buttons -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginStart="8dp">
 
-        <ImageView
-            android:id="@+id/deleteIcon"
-            android:layout_width="24dp"
-            android:layout_height="24dp"
-            android:src="@android:drawable/ic_menu_delete"
-            android:tint="@color/error"
-            android:clickable="true"
-            android:focusable="true"/>
+            <ImageButton
+                android:id="@+id/editButton"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:src="@drawable/ic_edit"
+                android:background="@drawable/icon_button_background"
+                android:contentDescription="Edit"
+                app:tint="@color/ios_blue"/>
+
+            <ImageButton
+                android:id="@+id/deleteButton"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:src="@drawable/ic_delete"
+                android:background="@drawable/icon_button_background"
+                android:layout_marginStart="8dp"
+                android:contentDescription="Delete"
+                app:tint="@color/ios_red"/>
+
+        </LinearLayout>
+
     </LinearLayout>
-</androidx.cardview.widget.CardView>
+
+</com.google.android.material.card.MaterialCardView>

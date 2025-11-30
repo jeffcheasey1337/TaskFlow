@@ -2,12 +2,12 @@ com.taskflow.app-cardview-1.0.0-0 C:\Users\Ilya\.gradle\caches\transforms-4\0335
 com.taskflow.app-jetified-appcompat-resources-1.6.1-1 C:\Users\Ilya\.gradle\caches\transforms-4\072adaa938e2a9a2f29ab5b7b22cc27b\transformed\jetified-appcompat-resources-1.6.1\res
 com.taskflow.app-jetified-emoji2-views-helper-1.2.0-2 C:\Users\Ilya\.gradle\caches\transforms-4\079c22ce6e051dc549c26e27691f5e0c\transformed\jetified-emoji2-views-helper-1.2.0\res
 com.taskflow.app-recyclerview-1.3.2-3 C:\Users\Ilya\.gradle\caches\transforms-4\1cfa9a0e232c41c25816c32f9f69749c\transformed\recyclerview-1.3.2\res
-com.taskflow.app-room-runtime-2.6.1-4 C:\Users\Ilya\.gradle\caches\transforms-4\2291a142b9186bc9940e16d33c82c15d\transformed\room-runtime-2.6.1\res
-com.taskflow.app-lifecycle-viewmodel-2.6.1-5 C:\Users\Ilya\.gradle\caches\transforms-4\2403b0e4a4d8bc92159784036afeb508\transformed\lifecycle-viewmodel-2.6.1\res
-com.taskflow.app-jetified-core-ktx-1.9.0-6 C:\Users\Ilya\.gradle\caches\transforms-4\258b2796e4bd1a60d8c86bfecafc2a83\transformed\jetified-core-ktx-1.9.0\res
+com.taskflow.app-core-1.12.0-4 C:\Users\Ilya\.gradle\caches\transforms-4\1d053ea61ad107b5243c0094cf7a8ae7\transformed\core-1.12.0\res
+com.taskflow.app-room-runtime-2.6.1-5 C:\Users\Ilya\.gradle\caches\transforms-4\2291a142b9186bc9940e16d33c82c15d\transformed\room-runtime-2.6.1\res
+com.taskflow.app-lifecycle-viewmodel-2.6.1-6 C:\Users\Ilya\.gradle\caches\transforms-4\2403b0e4a4d8bc92159784036afeb508\transformed\lifecycle-viewmodel-2.6.1\res
 com.taskflow.app-constraintlayout-2.1.4-7 C:\Users\Ilya\.gradle\caches\transforms-4\311cc69eff0f48193da784ece5cb8896\transformed\constraintlayout-2.1.4\res
 com.taskflow.app-jetified-emoji2-1.2.0-8 C:\Users\Ilya\.gradle\caches\transforms-4\40dac7d5b6ac1d2650df24d653979692\transformed\jetified-emoji2-1.2.0\res
-com.taskflow.app-core-1.9.0-9 C:\Users\Ilya\.gradle\caches\transforms-4\498012c85991e7d375200c7b29596613\transformed\core-1.9.0\res
+com.taskflow.app-jetified-core-ktx-1.12.0-9 C:\Users\Ilya\.gradle\caches\transforms-4\5559cbaf6a6a8e62ef087a7d02b672e5\transformed\jetified-core-ktx-1.12.0\res
 com.taskflow.app-sqlite-framework-2.4.0-10 C:\Users\Ilya\.gradle\caches\transforms-4\559f15d24f91463f0cedfe61950b7ca2\transformed\sqlite-framework-2.4.0\res
 com.taskflow.app-lifecycle-livedata-2.6.1-11 C:\Users\Ilya\.gradle\caches\transforms-4\5a2d4f18fe7f8e16ddacb583c8b2fabc\transformed\lifecycle-livedata-2.6.1\res
 com.taskflow.app-jetified-activity-1.8.0-12 C:\Users\Ilya\.gradle\caches\transforms-4\5d7d239c635e3b05e73c4bd82500664c\transformed\jetified-activity-1.8.0\res

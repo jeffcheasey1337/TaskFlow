@@ -1,21 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="primary">#6200EE</color>
-    <color name="primary_dark">#3700B3</color>
-    <color name="secondary">#03DAC6</color>
-    <color name="secondary_dark">#018786</color>
-    <color name="background">#F5F5F5</color>
-    <color name="surface">#FFFFFF</color>
-    <color name="error">#B00020</color>
-    <color name="text_primary">#000000</color>
-    <color name="text_secondary">#757575</color>
+    <!-- Light Theme Colors (iOS Style) -->
+    <color name="ios_primary">#007AFF</color>
+    <color name="ios_primary_dark">#0051D5</color>
+    <color name="ios_accent">#007AFF</color>
+    <color name="ios_background">#F2F2F7</color>
+    <color name="ios_surface">#FFFFFF</color>
+    <color name="ios_surface_variant">#F9F9F9</color>
 
-    <!-- Priority colors -->
-    <color name="priority_high">#F44336</color>
-    <color name="priority_medium">#FF9800</color>
-    <color name="priority_low">#4CAF50</color>
+    <!-- Dark Theme Colors -->
+    <color name="ios_primary_dark_theme">#0A84FF</color>
+    <color name="ios_accent_dark">#0A84FF</color>
+    <color name="ios_background_dark">#000000</color>
+    <color name="ios_surface_dark">#1C1C1E</color>
+    <color name="ios_surface_variant_dark">#2C2C2E</color>
 
-    <!-- Status colors -->
-    <color name="status_completed">#4CAF50</color>
-    <color name="status_active">#2196F3</color>
+    <!-- Glass Effect Colors -->
+    <color name="glass_white">#99FFFFFF</color>
+    <color name="glass_dark">#991C1C1E</color>
+    <color name="glass_border_light">#33FFFFFF</color>
+    <color name="glass_border_dark">#33000000</color>
+
+    <!-- Semantic Colors -->
+    <color name="ios_red">#FF3B30</color>
+    <color name="ios_orange">#FF9500</color>
+    <color name="ios_yellow">#FFCC00</color>
+    <color name="ios_green">#34C759</color>
+    <color name="ios_blue">#007AFF</color>
+    <color name="ios_purple">#AF52DE</color>
+    <color name="ios_pink">#FF2D55</color>
+
+    <!-- Text Colors -->
+    <color name="ios_text_primary">#000000</color>
+    <color name="ios_text_secondary">#8E8E93</color>
+    <color name="ios_text_tertiary">#C7C7CC</color>
+
+    <color name="ios_text_primary_dark">#FFFFFF</color>
+    <color name="ios_text_secondary_dark">#8E8E93</color>
+    <color name="ios_text_tertiary_dark">#48484A</color>
+
+    <!-- Priority Colors -->
+    <color name="priority_high">#FF3B30</color>
+    <color name="priority_medium">#FF9500</color>
+    <color name="priority_low">#34C759</color>
+
+    <!-- Shimmer/Glass gradient -->
+    <color name="shimmer_start">#1AFFFFFF</color>
+    <color name="shimmer_end">#00FFFFFF</color>
 </resources>

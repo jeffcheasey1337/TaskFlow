@@ -5,4 +5,5 @@
     <string name="nav_projects">Проекты</string>
     <string name="nav_stats">Статистика</string>
     <string name="nav_profile">Профиль</string>
+    <string name="add_task">Добавить задачу</string>
 </resources>

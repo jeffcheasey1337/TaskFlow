@@ -1,14 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<merger version="3"><dataSet aapt-namespace="http://schemas.android.com/apk/res-auto" config="main$Generated" generated="true" ignore_pattern="!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~"><source path="G:\Proekt\app\src\main\res"/></dataSet><dataSet aapt-namespace="http://schemas.android.com/apk/res-auto" config="main" generated-set="main$Generated" ignore_pattern="!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~"><source path="G:\Proekt\app\src\main\res"><file name="activity_main" path="G:\Proekt\app\src\main\res\layout\activity_main.xml" qualifiers="" type="layout"/><file name="activity_splash" path="G:\Proekt\app\src\main\res\layout\activity_splash.xml" qualifiers="" type="layout"/><file name="dialog_add_task" path="G:\Proekt\app\src\main\res\layout\dialog_add_task.xml" qualifiers="" type="layout"/><file name="item_task" path="G:\Proekt\app\src\main\res\layout\item_task.xml" qualifiers="" type="layout"/><file name="bottom_nav_menu" path="G:\Proekt\app\src\main\res\menu\bottom_nav_menu.xml" qualifiers="" type="menu"/><file path="G:\Proekt\app\src\main\res\values\colors.xml" qualifiers=""><color name="primary">#6200EE</color><color name="secondary">#03DAC6</color><color name="priority_high">#F44336</color><color name="priority_medium">#FF9800</color><color name="priority_low">#4CAF50</color><color name="primary_dark">#3700B3</color><color name="secondary_dark">#018786</color><color name="surface">#FFFFFF</color><color name="error">#B00020</color><color name="status_active">#2196F3</color><color name="background">#F5F5F5</color><color name="text_primary">#000000</color><color name="status_completed">#4CAF50</color><color name="text_secondary">#757575</color></file><file path="G:\Proekt\app\src\main\res\values\strings.xml" qualifiers=""><string name="app_name">TaskFlow</string><string name="nav_tasks">Задачи</string><string name="nav_calendar">Календарь</string><string name="nav_projects">Проекты</string><string name="nav_stats">Статистика</string><string name="nav_profile">Профиль</string></file><file path="G:\Proekt\app\src\main\res\values\themes.xml" qualifiers=""><style name="Theme.TaskFlow" parent="Theme.Material3.DayNight">
-        <item name="colorPrimary">@color/primary</item>
-        <item name="colorPrimaryDark">@color/primary_dark</item>
-        <item name="colorSecondary">@color/secondary</item>
-        <item name="colorSecondaryVariant">@color/secondary_dark</item>
-        <item name="android:colorBackground">@color/background</item>
-        <item name="colorSurface">@color/surface</item>
-        <item name="colorError">@color/error</item>
-        <item name="android:statusBarColor">@color/primary_dark</item>
-    </style></file><file name="dialog_settings" path="G:\Proekt\app\src\main\res\layout\dialog_settings.xml" qualifiers="" type="layout"/><file name="main_menu" path="G:\Proekt\app\src\main\res\menu\main_menu.xml" qualifiers="" type="menu"/><file path="G:\Proekt\app\src\main\res\values\arrays.xml" qualifiers=""><string-array name="priority_array">
+<merger version="3"><dataSet aapt-namespace="http://schemas.android.com/apk/res-auto" config="main$Generated" generated="true" ignore_pattern="!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~"><source path="G:\Proekt\app\src\main\res"/></dataSet><dataSet aapt-namespace="http://schemas.android.com/apk/res-auto" config="main" generated-set="main$Generated" ignore_pattern="!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~"><source path="G:\Proekt\app\src\main\res"><file name="bottom_nav_color" path="G:\Proekt\app\src\main\res\color\bottom_nav_color.xml" qualifiers="" type="color"/><file name="chip_background_color" path="G:\Proekt\app\src\main\res\color\chip_background_color.xml" qualifiers="" type="color"/><file name="chip_stroke_color" path="G:\Proekt\app\src\main\res\color\chip_stroke_color.xml" qualifiers="" type="color"/><file name="chip_text_color" path="G:\Proekt\app\src\main\res\color\chip_text_color.xml" qualifiers="" type="color"/><file name="switch_track_color" path="G:\Proekt\app\src\main\res\color\switch_track_color.xml" qualifiers="" type="color"/><file name="custom_checkbox" path="G:\Proekt\app\src\main\res\drawable\custom_checkbox.xml" qualifiers="" type="drawable"/><file name="deadline_display_background" path="G:\Proekt\app\src\main\res\drawable\deadline_display_background.xml" qualifiers="" type="drawable"/><file name="glass_bottom_nav_background" path="G:\Proekt\app\src\main\res\drawable\glass_bottom_nav_background.xml" qualifiers="" type="drawable"/><file name="glass_card_background" path="G:\Proekt\app\src\main\res\drawable\glass_card_background.xml" qualifiers="" type="drawable"/><file name="glass_chip_background" path="G:\Proekt\app\src\main\res\drawable\glass_chip_background.xml" qualifiers="" type="drawable"/><file name="glass_chip_selected" path="G:\Proekt\app\src\main\res\drawable\glass_chip_selected.xml" qualifiers="" type="drawable"/><file name="glass_dialog_background" path="G:\Proekt\app\src\main\res\drawable\glass_dialog_background.xml" qualifiers="" type="drawable"/><file name="gradient_background" path="G:\Proekt\app\src\main\res\drawable\gradient_background.xml" qualifiers="" type="drawable"/><file name="icon_button_background" path="G:\Proekt\app\src\main\res\drawable\icon_button_background.xml" qualifiers="" type="drawable"/><file name="ic_add" path="G:\Proekt\app\src\main\res\drawable\ic_add.xml" qualifiers="" type="drawable"/><file name="ic_back" path="G:\Proekt\app\src\main\res\drawable\ic_back.xml" qualifiers="" type="drawable"/><file name="ic_bell" path="G:\Proekt\app\src\main\res\drawable\ic_bell.xml" qualifiers="" type="drawable"/><file name="ic_calendar" path="G:\Proekt\app\src\main\res\drawable\ic_calendar.xml" qualifiers="" type="drawable"/><file name="ic_chart" path="G:\Proekt\app\src\main\res\drawable\ic_chart.xml" qualifiers="" type="drawable"/><file name="ic_chevron_left" path="G:\Proekt\app\src\main\res\drawable\ic_chevron_left.xml" qualifiers="" type="drawable"/><file name="ic_chevron_right" path="G:\Proekt\app\src\main\res\drawable\ic_chevron_right.xml" qualifiers="" type="drawable"/><file name="ic_clock" path="G:\Proekt\app\src\main\res\drawable\ic_clock.xml" qualifiers="" type="drawable"/><file name="ic_dark_mode" path="G:\Proekt\app\src\main\res\drawable\ic_dark_mode.xml" qualifiers="" type="drawable"/><file name="ic_delete" path="G:\Proekt\app\src\main\res\drawable\ic_delete.xml" qualifiers="" type="drawable"/><file name="ic_edit" path="G:\Proekt\app\src\main\res\drawable\ic_edit.xml" qualifiers="" type="drawable"/><file name="ic_filter" path="G:\Proekt\app\src\main\res\drawable\ic_filter.xml" qualifiers="" type="drawable"/><file name="ic_timer" path="G:\Proekt\app\src\main\res\drawable\ic_timer.xml" qualifiers="" type="drawable"/><file name="ic_today" path="G:\Proekt\app\src\main\res\drawable\ic_today.xml" qualifiers="" type="drawable"/><file name="ic_trophy" path="G:\Proekt\app\src\main\res\drawable\ic_trophy.xml" qualifiers="" type="drawable"/><file name="priority_indicator" path="G:\Proekt\app\src\main\res\drawable\priority_indicator.xml" qualifiers="" type="drawable"/><file name="project_tag_background" path="G:\Proekt\app\src\main\res\drawable\project_tag_background.xml" qualifiers="" type="drawable"/><file name="ripple_effect" path="G:\Proekt\app\src\main\res\drawable\ripple_effect.xml" qualifiers="" type="drawable"/><file name="settings_item_background" path="G:\Proekt\app\src\main\res\drawable\settings_item_background.xml" qualifiers="" type="drawable"/><file name="spinner_background" path="G:\Proekt\app\src\main\res\drawable\spinner_background.xml" qualifiers="" type="drawable"/><file name="task_indicator" path="G:\Proekt\app\src\main\res\drawable\task_indicator.xml" qualifiers="" type="drawable"/><file name="glass_bottom_nav_background" path="G:\Proekt\app\src\main\res\drawable-night\glass_bottom_nav_background.xml" qualifiers="night-v8" type="drawable"/><file name="glass_card_background" path="G:\Proekt\app\src\main\res\drawable-night\glass_card_background.xml" qualifiers="night-v8" type="drawable"/><file name="glass_dialog_background" path="G:\Proekt\app\src\main\res\drawable-night\glass_dialog_background.xml" qualifiers="night-v8" type="drawable"/><file name="gradient_background" path="G:\Proekt\app\src\main\res\drawable-night\gradient_background.xml" qualifiers="night-v8" type="drawable"/><file name="activity_calendar" path="G:\Proekt\app\src\main\res\layout\activity_calendar.xml" qualifiers="" type="layout"/><file name="activity_main" path="G:\Proekt\app\src\main\res\layout\activity_main.xml" qualifiers="" type="layout"/><file name="activity_splash" path="G:\Proekt\app\src\main\res\layout\activity_splash.xml" qualifiers="" type="layout"/><file name="dialog_add_task" path="G:\Proekt\app\src\main\res\layout\dialog_add_task.xml" qualifiers="" type="layout"/><file name="dialog_settings" path="G:\Proekt\app\src\main\res\layout\dialog_settings.xml" qualifiers="" type="layout"/><file name="item_calendar_day" path="G:\Proekt\app\src\main\res\layout\item_calendar_day.xml" qualifiers="" type="layout"/><file name="item_task" path="G:\Proekt\app\src\main\res\layout\item_task.xml" qualifiers="" type="layout"/><file name="bottom_nav_menu" path="G:\Proekt\app\src\main\res\menu\bottom_nav_menu.xml" qualifiers="" type="menu"/><file name="main_menu" path="G:\Proekt\app\src\main\res\menu\main_menu.xml" qualifiers="" type="menu"/><file path="G:\Proekt\app\src\main\res\values\arrays.xml" qualifiers=""><string-array name="priority_array">
         <item>Высокий</item>
         <item>Средний</item>
         <item>Низкий</item>
@@ -18,4 +9,98 @@
         <item>🛒 Покупки</item>
         <item>💊 Здоровье</item>
         <item>📌 Другое</item>
-    </string-array></file></source></dataSet><dataSet aapt-namespace="http://schemas.android.com/apk/res-auto" config="debug$Generated" generated="true" ignore_pattern="!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~"><source path="G:\Proekt\app\src\debug\res"/></dataSet><dataSet aapt-namespace="http://schemas.android.com/apk/res-auto" config="debug" generated-set="debug$Generated" ignore_pattern="!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~"><source path="G:\Proekt\app\src\debug\res"/></dataSet><dataSet aapt-namespace="http://schemas.android.com/apk/res-auto" config="generated$Generated" generated="true" ignore_pattern="!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~"><source path="G:\Proekt\app\build\generated\res\resValues\debug"/></dataSet><dataSet aapt-namespace="http://schemas.android.com/apk/res-auto" config="generated" generated-set="generated$Generated" ignore_pattern="!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~"><source path="G:\Proekt\app\build\generated\res\resValues\debug"/></dataSet><mergedItems/></merger>
+    </string-array></file><file path="G:\Proekt\app\src\main\res\values\colors.xml" qualifiers=""><color name="ios_primary">#007AFF</color><color name="ios_primary_dark">#0051D5</color><color name="ios_accent">#007AFF</color><color name="ios_background">#F2F2F7</color><color name="ios_surface">#FFFFFF</color><color name="ios_surface_variant">#F9F9F9</color><color name="ios_primary_dark_theme">#0A84FF</color><color name="ios_accent_dark">#0A84FF</color><color name="ios_background_dark">#000000</color><color name="ios_surface_dark">#1C1C1E</color><color name="ios_surface_variant_dark">#2C2C2E</color><color name="glass_white">#99FFFFFF</color><color name="glass_dark">#991C1C1E</color><color name="glass_border_light">#33FFFFFF</color><color name="glass_border_dark">#33000000</color><color name="ios_red">#FF3B30</color><color name="ios_orange">#FF9500</color><color name="ios_yellow">#FFCC00</color><color name="ios_green">#34C759</color><color name="ios_blue">#007AFF</color><color name="ios_purple">#AF52DE</color><color name="ios_pink">#FF2D55</color><color name="ios_text_primary">#000000</color><color name="ios_text_secondary">#8E8E93</color><color name="ios_text_tertiary">#C7C7CC</color><color name="ios_text_primary_dark">#FFFFFF</color><color name="ios_text_secondary_dark">#8E8E93</color><color name="ios_text_tertiary_dark">#48484A</color><color name="priority_high">#FF3B30</color><color name="priority_medium">#FF9500</color><color name="priority_low">#34C759</color><color name="shimmer_start">#1AFFFFFF</color><color name="shimmer_end">#00FFFFFF</color></file><file path="G:\Proekt\app\src\main\res\values\strings.xml" qualifiers=""><string name="app_name">TaskFlow</string><string name="nav_tasks">Задачи</string><string name="nav_calendar">Календарь</string><string name="nav_projects">Проекты</string><string name="nav_stats">Статистика</string><string name="nav_profile">Профиль</string><string name="add_task">Добавить задачу</string></file><file path="G:\Proekt\app\src\main\res\values\styles.xml" qualifiers=""><style name="AlertDialogTheme" parent="ThemeOverlay.MaterialComponents.MaterialAlertDialog">
+        <item name="shapeAppearanceOverlay">@style/DialogCorners</item>
+        <item name="materialAlertDialogTitleTextStyle">@style/DialogTitle</item>
+        <item name="buttonBarPositiveButtonStyle">@style/DialogButton.Positive</item>
+        <item name="buttonBarNegativeButtonStyle">@style/DialogButton.Negative</item>
+        <item name="backgroundTint">@color/glass_white</item>
+    </style><style name="DialogCorners" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">24dp</item>
+    </style><style name="DialogTitle" parent="MaterialAlertDialog.MaterialComponents.Title.Text">
+        <item name="android:textSize">22sp</item>
+        <item name="android:textStyle">bold</item>
+    </style><style name="DialogButton.Positive" parent="Widget.MaterialComponents.Button.TextButton.Dialog">
+        <item name="android:textColor">@color/ios_blue</item>
+        <item name="android:textSize">17sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textAllCaps">false</item>
+    </style><style name="DialogButton.Negative" parent="Widget.MaterialComponents.Button.TextButton.Dialog">
+        <item name="android:textColor">@color/ios_text_secondary</item>
+        <item name="android:textSize">17sp</item>
+        <item name="android:textAllCaps">false</item>
+    </style><style name="WeekDayHeader">
+
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/ios_text_secondary</item>
+    </style></file><file path="G:\Proekt\app\src\main\res\values\themes.xml" qualifiers=""><style name="AppTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <item name="colorPrimary">@color/ios_primary</item>
+        <item name="colorPrimaryDark">@color/ios_primary_dark</item>
+        <item name="colorAccent">@color/ios_accent</item>
+        <item name="colorSecondary">@color/ios_accent</item>
+        <item name="android:colorBackground">@color/ios_background</item>
+        <item name="colorSurface">@color/ios_surface</item>
+        <item name="android:windowBackground">@color/ios_background</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:navigationBarColor">@android:color/transparent</item>
+        <item name="android:windowLightStatusBar">true</item>
+        <item name="android:windowLightNavigationBar">true</item>
+
+        
+        <item name="shapeAppearanceSmallComponent">@style/ShapeAppearance.App.SmallComponent</item>
+        <item name="shapeAppearanceMediumComponent">@style/ShapeAppearance.App.MediumComponent</item>
+        <item name="shapeAppearanceLargeComponent">@style/ShapeAppearance.App.LargeComponent</item>
+
+        
+        <item name="materialCardViewStyle">@style/Widget.App.CardView</item>
+
+        
+        <item name="materialButtonStyle">@style/Widget.App.Button</item>
+    </style><style name="AppTheme.Dark" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/ios_primary_dark_theme</item>
+        <item name="colorPrimaryDark">@color/ios_primary_dark</item>
+        <item name="colorAccent">@color/ios_accent_dark</item>
+        <item name="colorSecondary">@color/ios_accent_dark</item>
+        <item name="android:colorBackground">@color/ios_background_dark</item>
+        <item name="colorSurface">@color/ios_surface_dark</item>
+        <item name="android:windowBackground">@color/ios_background_dark</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:navigationBarColor">@android:color/transparent</item>
+        <item name="android:windowLightStatusBar">false</item>
+        <item name="android:windowLightNavigationBar">false</item>
+
+        <item name="shapeAppearanceSmallComponent">@style/ShapeAppearance.App.SmallComponent</item>
+        <item name="shapeAppearanceMediumComponent">@style/ShapeAppearance.App.MediumComponent</item>
+        <item name="shapeAppearanceLargeComponent">@style/ShapeAppearance.App.LargeComponent</item>
+
+        <item name="materialCardViewStyle">@style/Widget.App.CardView</item>
+        <item name="materialButtonStyle">@style/Widget.App.Button</item>
+    </style><style name="ShapeAppearance.App.SmallComponent" parent="ShapeAppearance.MaterialComponents.SmallComponent">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">12dp</item>
+    </style><style name="ShapeAppearance.App.MediumComponent" parent="ShapeAppearance.MaterialComponents.MediumComponent">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">16dp</item>
+    </style><style name="ShapeAppearance.App.LargeComponent" parent="ShapeAppearance.MaterialComponents.LargeComponent">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">24dp</item>
+    </style><style name="Widget.App.CardView" parent="Widget.MaterialComponents.CardView">
+        <item name="cardCornerRadius">16dp</item>
+        <item name="cardElevation">0dp</item>
+        <item name="strokeWidth">0dp</item>
+    </style><style name="Widget.App.Button" parent="Widget.MaterialComponents.Button">
+        <item name="cornerRadius">12dp</item>
+        <item name="android:textAllCaps">false</item>
+    </style><style name="Widget.App.Toolbar" parent="Widget.MaterialComponents.Toolbar">
+        <item name="titleTextAppearance">@style/TextAppearance.App.Toolbar</item>
+        <item name="android:elevation">0dp</item>
+    </style><style name="TextAppearance.App.Toolbar" parent="TextAppearance.MaterialComponents.Headline6">
+        <item name="android:textSize">34sp</item>
+        <item name="android:textColor">?attr/colorOnSurface</item>
+    </style></file><file name="circular_progress" path="G:\Proekt\app\src\main\res\drawable\circular_progress.xml" qualifiers="" type="drawable"/><file name="activity_achievements" path="G:\Proekt\app\src\main\res\layout\activity_achievements.xml" qualifiers="" type="layout"/><file name="activity_pomodoro" path="G:\Proekt\app\src\main\res\layout\activity_pomodoro.xml" qualifiers="" type="layout"/><file name="activity_statistics" path="G:\Proekt\app\src\main\res\layout\activity_statistics.xml" qualifiers="" type="layout"/><file name="item_achievement" path="G:\Proekt\app\src\main\res\layout\item_achievement.xml" qualifiers="" type="layout"/></source></dataSet><dataSet aapt-namespace="http://schemas.android.com/apk/res-auto" config="debug$Generated" generated="true" ignore_pattern="!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~"><source path="G:\Proekt\app\src\debug\res"/></dataSet><dataSet aapt-namespace="http://schemas.android.com/apk/res-auto" config="debug" generated-set="debug$Generated" ignore_pattern="!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~"><source path="G:\Proekt\app\src\debug\res"/></dataSet><dataSet aapt-namespace="http://schemas.android.com/apk/res-auto" config="generated$Generated" generated="true" ignore_pattern="!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~"><source path="G:\Proekt\app\build\generated\res\resValues\debug"/></dataSet><dataSet aapt-namespace="http://schemas.android.com/apk/res-auto" config="generated" generated-set="generated$Generated" ignore_pattern="!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~"><source path="G:\Proekt\app\build\generated\res\resValues\debug"/></dataSet><mergedItems/></merger>

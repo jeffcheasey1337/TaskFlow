@@ -2,6 +2,34 @@ package com.taskflow.app.ui;
 
 import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
+import android.content.Intent;
+import android.content.SharedPreferences;
+import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.view.View;
+import android.widget.*;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
+import androidx.appcompat.widget.SearchView;
+import androidx.core.view.WindowCompat;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.chip.Chip;
+import com.google.android.material.chip.ChipGroup;
+import com.google.android.material.dialog.MaterialAlertDialogBuilder;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.android.material.switchmaterial.SwitchMaterial;
+import com.taskflow.app.R;
+import com.taskflow.app.data.database.AppDatabase;
+import com.taskflow.app.data.model.Task;
+import com.taskflow.app.ui.adapter.TaskAdapter;
+import java.text.SimpleDateFormat;
+import java.util.*;
+import android.app.DatePickerDialog;
+import android.app.TimePickerDialog;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.Menu;
@@ -24,36 +52,48 @@ import com.taskflow.app.ui.adapter.TaskAdapter;
 import java.text.SimpleDateFormat;
 import java.util.*;
 
+
 public class MainActivity extends AppCompatActivity {
     private RecyclerView recyclerView;
     private TaskAdapter adapter;
     private AppDatabase database;
-    private SearchView searchView;
     private String currentFilter = "all";
     private SharedPreferences prefs;
+    private TextView subtitleText;
+    private SearchView searchView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        // Применяем тему
         prefs = getSharedPreferences("TaskFlowPrefs", MODE_PRIVATE);
         boolean isDarkMode = prefs.getBoolean("dark_mode", false);
-        AppCompatDelegate.setDefaultNightMode(
-                isDarkMode ? AppCompatDelegate.MODE_NIGHT_YES : AppCompatDelegate.MODE_NIGHT_NO
-        );
+
+        if (isDarkMode) {
+            setTheme(R.style.AppTheme_Dark);
+            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
+        } else {
+            setTheme(R.style.AppTheme);
+            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+        }
 
         super.onCreate(savedInstanceState);
+        WindowCompat.setDecorFitsSystemWindows(getWindow(), false);
         setContentView(R.layout.activity_main);
 
         database = AppDatabase.getInstance(this);
 
         recyclerView = findViewById(R.id.recyclerView);
+
         FloatingActionButton fab = findViewById(R.id.fab);
 
         setupAdapter();
         setupRecyclerView();
         setupCategoryChips();
+        //updateSubtitle();
 
-        fab.setOnClickListener(v -> showAddDialog());
+        fab.setOnClickListener(v -> {
+            animateFab(fab);
+            showAddDialog();
+        });
 
         setupBottomNav();
         loadTasks();
@@ -90,10 +130,25 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        if (item.getItemId() == R.id.action_sort_priority) {
-            showPriorityFilter();
+        int id = item.getItemId();
+
+        if (id == R.id.action_calendar) {
+            startActivity(new Intent(this, CalendarActivity.class));
+            return true;
+        } else if (id == R.id.action_statistics) {
+            startActivity(new Intent(this, StatisticsActivity.class));
+            return true;
+        } else if (id == R.id.action_achievements) {
+            startActivity(new Intent(this, AchievementsActivity.class));
+            return true;
+        } else if (id == R.id.action_pomodoro) {
+            startActivity(new Intent(this, PomodoroActivity.class));
+            return true;
+        } else if (id == R.id.action_filter) {
+            showFilterDialog();
             return true;
         }
+
         return super.onOptionsItemSelected(item);
     }
 
@@ -104,18 +159,20 @@ public class MainActivity extends AppCompatActivity {
                 task.setCompleted(!task.isCompleted());
                 database.taskDao().updateTask(task);
                 loadTasks();
-                Toast.makeText(MainActivity.this, "Готово! 🎉", Toast.LENGTH_SHORT).show();
+                //updateSubtitle();
+                showToast(task.isCompleted() ? "Готово! 🎉" : "Задача открыта");
             }
 
             @Override
             public void onTaskDelete(Task task) {
-                new AlertDialog.Builder(MainActivity.this)
+                new MaterialAlertDialogBuilder(MainActivity.this, R.style.AlertDialogTheme)
                         .setTitle("Удалить задачу?")
                         .setMessage("Вы уверены, что хотите удалить эту задачу?")
                         .setPositiveButton("Удалить", (d, w) -> {
                             database.taskDao().deleteTask(task);
                             loadTasks();
-                            Toast.makeText(MainActivity.this, "Удалено", Toast.LENGTH_SHORT).show();
+                            //updateSubtitle();
+                            showToast("Удалено");
                         })
                         .setNegativeButton("Отмена", null)
                         .show();
@@ -131,60 +188,39 @@ public class MainActivity extends AppCompatActivity {
     private void setupRecyclerView() {
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setAdapter(adapter);
-
-        // Drag & Drop для изменения порядка
-        ItemTouchHelper helper = new ItemTouchHelper(new ItemTouchHelper.SimpleCallback(
-                ItemTouchHelper.UP | ItemTouchHelper.DOWN, 0) {
-
-            @Override
-            public boolean onMove(RecyclerView rv, RecyclerView.ViewHolder vh, RecyclerView.ViewHolder target) {
-                int fromPos = vh.getAdapterPosition();
-                int toPos = target.getAdapterPosition();
-
-                List<Task> tasks = adapter.getTasks();
-                Collections.swap(tasks, fromPos, toPos);
-
-                // Обновляем sortOrder
-                for (int i = 0; i < tasks.size(); i++) {
-                    tasks.get(i).setSortOrder(i);
-                    database.taskDao().updateTask(tasks.get(i));
-                }
-
-                adapter.notifyItemMoved(fromPos, toPos);
-                return true;
-            }
-
-            @Override
-            public void onSwiped(RecyclerView.ViewHolder vh, int direction) {
-                // Не используется
-            }
-        });
-
-        helper.attachToRecyclerView(recyclerView);
+        recyclerView.setOverScrollMode(View.OVER_SCROLL_NEVER);
     }
 
     private void setupCategoryChips() {
         ChipGroup chipGroup = findViewById(R.id.categoryChipGroup);
 
-        String[] categories = {"Все", "Работа", "Личное", "Покупки", "Здоровье"};
-        String[] categoryValues = {"all", "work", "personal", "shopping", "health"};
+        String[] categories = {"Все", "Работа", "Личное", "Покупки", "Здоровье", "⭐ Избранное"};
+        String[] categoryValues = {"all", "work", "personal", "shopping", "health", "favorite"};
+        String[] categoryEmojis = {"📋", "💼", "👤", "🛒", "💪", "⭐"};
 
         for (int i = 0; i < categories.length; i++) {
             Chip chip = new Chip(this);
-            chip.setText(categories[i]);
+            chip.setText(categoryEmojis[i] + " " + categories[i]);
             chip.setCheckable(true);
             chip.setChecked(i == 0);
+            chip.setChipBackgroundColorResource(R.color.chip_background_color);
+            chip.setTextColor(getColor(R.color.chip_text_color));
+            chip.setChipStrokeWidth(1f);
+            chip.setChipStrokeColorResource(R.color.chip_stroke_color);
+            chip.setChipCornerRadius(48f);
 
             final String category = categoryValues[i];
+
             chip.setOnClickListener(v -> {
                 currentFilter = category;
                 loadTasks();
 
-                // Снимаем выделение с других чипов
                 for (int j = 0; j < chipGroup.getChildCount(); j++) {
                     Chip c = (Chip) chipGroup.getChildAt(j);
                     c.setChecked(c == chip);
                 }
+
+                animateChip(chip);
             });
 
             chipGroup.addView(chip);
@@ -196,19 +232,33 @@ public class MainActivity extends AppCompatActivity {
 
         if (currentFilter.equals("all")) {
             tasks = database.taskDao().getAllTasks();
+        } else if (currentFilter.equals("favorite")) {
+            tasks = database.taskDao().getFavoriteTasks();
         } else {
             tasks = database.taskDao().getTasksByCategory(currentFilter);
         }
 
         adapter.setTasks(tasks);
+        //updateSubtitle();
     }
 
     private void searchTasks(String query) {
         adapter.setTasks(database.taskDao().searchTasks(query));
     }
+/*
+    private void updateSubtitle() {
+        int active = database.taskDao().getActiveTaskCount();
+        int completed = database.taskDao().getCompletedTaskCount();
 
+        String subtitle = String.format(Locale.getDefault(),
+                "%d активных • %d выполнено", active, completed);
+        subtitleText.setText(subtitle);
+    }
+*/
     private void showAddDialog() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
         View dialogView = getLayoutInflater().inflate(R.layout.dialog_add_task, null);
+
         EditText titleInput = dialogView.findViewById(R.id.titleInput);
         EditText projectInput = dialogView.findViewById(R.id.projectInput);
         Spinner prioritySpinner = dialogView.findViewById(R.id.prioritySpinner);
@@ -222,11 +272,13 @@ public class MainActivity extends AppCompatActivity {
                 R.array.priority_array, android.R.layout.simple_spinner_item);
         priorityAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         prioritySpinner.setAdapter(priorityAdapter);
+        prioritySpinner.setSelection(1); // По умолчанию "Средний"
 
         ArrayAdapter<CharSequence> categoryAdapter = ArrayAdapter.createFromResource(this,
                 R.array.category_array, android.R.layout.simple_spinner_item);
         categoryAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         categorySpinner.setAdapter(categoryAdapter);
+        categorySpinner.setSelection(1); // По умолчанию "Личное"
 
         final long[] selectedDeadline = {0};
 
@@ -245,8 +297,7 @@ public class MainActivity extends AppCompatActivity {
             }, calendar.get(Calendar.YEAR), calendar.get(Calendar.MONTH), calendar.get(Calendar.DAY_OF_MONTH)).show();
         });
 
-        new AlertDialog.Builder(this)
-                .setTitle("Новая задача")
+        builder.setTitle("Новая задача")
                 .setView(dialogView)
                 .setPositiveButton("Добавить", (d, w) -> {
                     String title = titleInput.getText().toString().trim();
@@ -256,6 +307,10 @@ public class MainActivity extends AppCompatActivity {
                         if (project.isEmpty()) project = "Без проекта";
 
                         String priority = prioritySpinner.getSelectedItem().toString().toLowerCase();
+                        if (priority.equals("высокий")) priority = "high";
+                        else if (priority.equals("средний")) priority = "medium";
+                        else if (priority.equals("низкий")) priority = "low";
+
                         String category = getCategoryValue(categorySpinner.getSelectedItemPosition());
 
                         Task task = new Task(title, project, priority);
@@ -266,105 +321,29 @@ public class MainActivity extends AppCompatActivity {
                         database.taskDao().insertTask(task);
                         loadTasks();
                         Toast.makeText(this, "Задача добавлена! ✓", Toast.LENGTH_SHORT).show();
+                    } else {
+                        Toast.makeText(this, "Введите название задачи", Toast.LENGTH_SHORT).show();
                     }
                 })
-                .setNegativeButton("Отмена", null)
-                .show();
+                .setNegativeButton("Отмена", null);
+
+        AlertDialog dialog = builder.create();
+        dialog.show();
     }
 
     private void showEditDialog(Task task) {
-        View dialogView = getLayoutInflater().inflate(R.layout.dialog_add_task, null);
-        EditText titleInput = dialogView.findViewById(R.id.titleInput);
-        EditText projectInput = dialogView.findViewById(R.id.projectInput);
-        Spinner prioritySpinner = dialogView.findViewById(R.id.prioritySpinner);
-        Spinner categorySpinner = dialogView.findViewById(R.id.categorySpinner);
-        TextView deadlineText = dialogView.findViewById(R.id.deadlineText);
-        Button setDeadlineBtn = dialogView.findViewById(R.id.setDeadlineBtn);
-        CheckBox reminderCheckBox = dialogView.findViewById(R.id.reminderCheckBox);
-
-        // Заполняем текущими значениями
-        titleInput.setText(task.getTitle());
-        projectInput.setText(task.getProject());
-        reminderCheckBox.setChecked(task.hasReminder());
-
-        // Настройка спиннеров
-        ArrayAdapter<CharSequence> priorityAdapter = ArrayAdapter.createFromResource(this,
-                R.array.priority_array, android.R.layout.simple_spinner_item);
-        priorityAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        prioritySpinner.setAdapter(priorityAdapter);
-        prioritySpinner.setSelection(getPriorityPosition(task.getPriority()));
-
-        ArrayAdapter<CharSequence> categoryAdapter = ArrayAdapter.createFromResource(this,
-                R.array.category_array, android.R.layout.simple_spinner_item);
-        categoryAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        categorySpinner.setAdapter(categoryAdapter);
-        categorySpinner.setSelection(getCategoryPosition(task.getCategory()));
-
-        if (task.getDeadline() > 0) {
-            SimpleDateFormat sdf = new SimpleDateFormat("dd.MM.yyyy HH:mm", Locale.getDefault());
-            deadlineText.setText("Дедлайн: " + sdf.format(new Date(task.getDeadline())));
-            deadlineText.setVisibility(View.VISIBLE);
-        }
-
-        final long[] selectedDeadline = {task.getDeadline()};
-
-        setDeadlineBtn.setOnClickListener(v -> {
-            Calendar calendar = Calendar.getInstance();
-
-            new DatePickerDialog(this, (view, year, month, day) -> {
-                new TimePickerDialog(this, (timeView, hour, minute) -> {
-                    calendar.set(year, month, day, hour, minute);
-                    selectedDeadline[0] = calendar.getTimeInMillis();
-
-                    SimpleDateFormat sdf = new SimpleDateFormat("dd.MM.yyyy HH:mm", Locale.getDefault());
-                    deadlineText.setText("Дедлайн: " + sdf.format(calendar.getTime()));
-                    deadlineText.setVisibility(View.VISIBLE);
-                }, calendar.get(Calendar.HOUR_OF_DAY), calendar.get(Calendar.MINUTE), true).show();
-            }, calendar.get(Calendar.YEAR), calendar.get(Calendar.MONTH), calendar.get(Calendar.DAY_OF_MONTH)).show();
-        });
-
-        new AlertDialog.Builder(this)
-                .setTitle("Редактировать задачу")
-                .setView(dialogView)
-                .setPositiveButton("Сохранить", (d, w) -> {
-                    String title = titleInput.getText().toString().trim();
-                    String project = projectInput.getText().toString().trim();
-
-                    if (!title.isEmpty()) {
-                        if (project.isEmpty()) project = "Без проекта";
-
-                        task.setTitle(title);
-                        task.setProject(project);
-                        task.setPriority(prioritySpinner.getSelectedItem().toString().toLowerCase());
-                        task.setCategory(getCategoryValue(categorySpinner.getSelectedItemPosition()));
-                        task.setDeadline(selectedDeadline[0]);
-                        task.setHasReminder(reminderCheckBox.isChecked());
-
-                        database.taskDao().updateTask(task);
-                        loadTasks();
-                        Toast.makeText(this, "Задача обновлена! ✓", Toast.LENGTH_SHORT).show();
-                    }
-                })
-                .setNegativeButton("Отмена", null)
-                .show();
+        Toast.makeText(this, "Диалог редактирования задачи", Toast.LENGTH_SHORT).show();
     }
 
-    private void showPriorityFilter() {
-        String[] priorities = {"Все", "Высокий", "Средний", "Низкий"};
+    private void showFilterDialog() {
+        String[] filters = {"Все задачи", "Только активные", "Только завершённые",
+                "С дедлайном", "Просроченные", "Повторяющиеся"};
 
-        new AlertDialog.Builder(this)
-                .setTitle("Фильтр по приоритету")
-                .setItems(priorities, (dialog, which) -> {
-                    if (which == 0) {
-                        loadTasks();
-                    } else {
-                        String priority = priorities[which].toLowerCase();
-                        if (priority.equals("высокий")) priority = "high";
-                        else if (priority.equals("средний")) priority = "medium";
-                        else priority = "low";
-
-                        adapter.setTasks(database.taskDao().getTasksByPriority(priority));
-                    }
+        new MaterialAlertDialogBuilder(this, R.style.AlertDialogTheme)
+                .setTitle("Фильтры")
+                .setItems(filters, (dialog, which) -> {
+                    // TODO: Применить фильтр
+                    loadTasks();
                 })
                 .show();
     }
@@ -372,60 +351,77 @@ public class MainActivity extends AppCompatActivity {
     private void setupBottomNav() {
         BottomNavigationView bottomNav = findViewById(R.id.bottomNav);
         bottomNav.setOnItemSelectedListener(item -> {
-            if (item.getItemId() == R.id.nav_stats) {
-                showStats();
-            } else if (item.getItemId() == R.id.nav_settings) {
-                showSettings();
-            } else if (item.getItemId() == R.id.nav_tasks) {
+            int id = item.getItemId();
+
+            if (id == R.id.nav_tasks) {
                 loadTasks();
+            } else if (id == R.id.nav_stats) {
+                startActivity(new Intent(this, StatisticsActivity.class));
+            } else if (id == R.id.nav_settings) {
+                showSettings();
             }
             return true;
         });
     }
 
-    private void showStats() {
-        int completed = database.taskDao().getCompletedTaskCount();
-        int active = database.taskDao().getActiveTaskCount();
-        int overdue = database.taskDao().getOverdueTaskCount(System.currentTimeMillis());
-
-        String message = "📊 Статистика\n\n" +
-                "✅ Выполнено: " + completed + "\n" +
-                "⏳ Активных: " + active + "\n" +
-                "⚠️ Просрочено: " + overdue;
-
-        new AlertDialog.Builder(this)
-                .setTitle("Статистика")
-                .setMessage(message)
-                .setPositiveButton("OK", null)
-                .show();
-    }
-
     private void showSettings() {
         View settingsView = getLayoutInflater().inflate(R.layout.dialog_settings, null);
-        CheckBox darkModeCheckBox = settingsView.findViewById(R.id.darkModeCheckBox);
+        SwitchMaterial darkModeSwitch = settingsView.findViewById(R.id.darkModeCheckBox);
 
-        darkModeCheckBox.setChecked(prefs.getBoolean("dark_mode", false));
+        darkModeSwitch.setChecked(prefs.getBoolean("dark_mode", false));
 
-        new AlertDialog.Builder(this)
+        new MaterialAlertDialogBuilder(this, R.style.AlertDialogTheme)
                 .setTitle("⚙️ Настройки")
                 .setView(settingsView)
                 .setPositiveButton("Сохранить", (d, w) -> {
-                    boolean isDarkMode = darkModeCheckBox.isChecked();
+                    boolean isDarkMode = darkModeSwitch.isChecked();
                     prefs.edit().putBoolean("dark_mode", isDarkMode).apply();
-
-                    AppCompatDelegate.setDefaultNightMode(
-                            isDarkMode ? AppCompatDelegate.MODE_NIGHT_YES : AppCompatDelegate.MODE_NIGHT_NO
-                    );
-
                     recreate();
                 })
                 .setNegativeButton("Отмена", null)
                 .show();
     }
 
+    private void animateFab(View fab) {
+        fab.animate()
+                .scaleX(0.9f)
+                .scaleY(0.9f)
+                .setDuration(100)
+                .withEndAction(() -> {
+                    fab.animate()
+                            .scaleX(1f)
+                            .scaleY(1f)
+                            .setDuration(100)
+                            .start();
+                })
+                .start();
+    }
+
+    private void animateChip(View chip) {
+        chip.animate()
+                .scaleX(1.05f)
+                .scaleY(1.05f)
+                .setDuration(100)
+                .withEndAction(() -> {
+                    chip.animate()
+                            .scaleX(1f)
+                            .scaleY(1f)
+                            .setDuration(100)
+                            .start();
+                })
+                .start();
+    }
+
+    private void showToast(String message) {
+        Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
+    }
+
     private String getCategoryValue(int position) {
         String[] values = {"work", "personal", "shopping", "health", "other"};
-        return values[position];
+        if (position >= 0 && position < values.length) {
+            return values[position];
+        }
+        return "personal"; // default
     }
 
     private int getCategoryPosition(String category) {
@@ -443,4 +439,4 @@ public class MainActivity extends AppCompatActivity {
         }
         return 1; // default medium
     }
-}
+}  // Закрывающая скобка класса
