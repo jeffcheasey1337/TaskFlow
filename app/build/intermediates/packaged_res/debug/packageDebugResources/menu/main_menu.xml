@@ -2,6 +2,7 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
+    <!-- Поиск - всегда видимый -->
     <item
         android:id="@+id/action_search"
         android:title="Поиск"
@@ -9,28 +10,32 @@
         app:showAsAction="ifRoom|collapseActionView"
         app:actionViewClass="androidx.appcompat.widget.SearchView"/>
 
+    <!-- Календарь - всегда видимый -->
     <item
         android:id="@+id/action_calendar"
         android:title="Календарь"
         android:icon="@drawable/ic_calendar"
-        app:showAsAction="never"/>
+        app:showAsAction="always"/>
 
+    <!-- Статистика - всегда видимая -->
     <item
         android:id="@+id/action_statistics"
         android:title="Статистика"
         android:icon="@drawable/ic_chart"
-        app:showAsAction="never"/>
+        app:showAsAction="always"/>
 
-    <item
-        android:id="@+id/action_achievements"
-        android:title="Достижения"
-        android:icon="@drawable/ic_trophy"
-        app:showAsAction="never"/>
-
+    <!-- Помодоро - всегда видимый -->
     <item
         android:id="@+id/action_pomodoro"
         android:title="Помодоро"
         android:icon="@drawable/ic_timer"
+        app:showAsAction="always"/>
+
+    <!-- Остальное в меню (три точки) -->
+    <item
+        android:id="@+id/action_achievements"
+        android:title="Достижения"
+        android:icon="@drawable/ic_trophy"
         app:showAsAction="never"/>
 
     <item

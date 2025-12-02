@@ -3031,6 +3031,7 @@ drawable glass_chip_selected
 drawable glass_dialog_background
 drawable gradient_background
 drawable ic_add
+drawable ic_app_logo
 drawable ic_arrow_back_black_24
 drawable ic_back
 drawable ic_bell
@@ -3052,6 +3053,8 @@ drawable ic_delete
 drawable ic_edit
 drawable ic_filter
 drawable ic_keyboard_black_24dp
+drawable ic_launcher_background
+drawable ic_launcher_foreground
 drawable ic_m3_chip_check
 drawable ic_m3_chip_checked_circle
 drawable ic_m3_chip_close
@@ -3141,6 +3144,8 @@ drawable project_tag_background
 drawable ripple_effect
 drawable settings_item_background
 drawable spinner_background
+drawable splash_dot
+drawable splash_gradient
 drawable task_indicator
 drawable test_level_drawable
 drawable tooltip_frame_dark
@@ -3234,6 +3239,7 @@ id animateToEnd
 id animateToStart
 id antiClockwise
 id anticipate
+id appName
 id arc
 id asConfigured
 id async
@@ -3327,6 +3333,9 @@ id disableIntraAutoTransition
 id disablePostScroll
 id disableScroll
 id disjoint
+id dot1
+id dot2
+id dot3
 id dragAnticlockwise
 id dragClockwise
 id dragDown
@@ -3417,6 +3426,7 @@ id listMode
 id list_item
 id lockIcon
 id lockOverlay
+id logoIcon
 id m3_side_sheet
 id marquee
 id masked
@@ -3672,6 +3682,7 @@ id titleText
 id title_template
 id todayButton
 id toggle
+id toolbar
 id top
 id topPanel
 id totalText
@@ -3914,6 +3925,8 @@ layout select_dialog_singlechoice_material
 layout support_simple_spinner_dropdown_item
 menu bottom_nav_menu
 menu main_menu
+mipmap ic_launcher
+mipmap ic_launcher_round
 plurals mtrl_badge_content_description
 string abc_action_bar_home_description
 string abc_action_bar_up_description
@@ -4378,13 +4391,10 @@ style Base_Widget_MaterialComponents_Snackbar
 style Base_Widget_MaterialComponents_TextInputEditText
 style Base_Widget_MaterialComponents_TextInputLayout
 style Base_Widget_MaterialComponents_TextView
+style CalendarDateCell
 style CardView
 style CardView_Dark
 style CardView_Light
-style DialogButton_Negative
-style DialogButton_Positive
-style DialogCorners
-style DialogTitle
 style MaterialAlertDialog_Material3
 style MaterialAlertDialog_Material3_Animation
 style MaterialAlertDialog_Material3_Body_Text
@@ -4405,6 +4415,7 @@ style MaterialAlertDialog_MaterialComponents_Title_Panel
 style MaterialAlertDialog_MaterialComponents_Title_Panel_CenterStacked
 style MaterialAlertDialog_MaterialComponents_Title_Text
 style MaterialAlertDialog_MaterialComponents_Title_Text_CenterStacked
+style NegativeButtonStyle
 style Platform_AppCompat
 style Platform_AppCompat_Light
 style Platform_MaterialComponents
@@ -4419,6 +4430,7 @@ style Platform_V21_AppCompat_Light
 style Platform_V25_AppCompat
 style Platform_V25_AppCompat_Light
 style Platform_Widget_AppCompat_Spinner
+style PositiveButtonStyle
 style RtlOverlay_DialogWindowTitle_AppCompat
 style RtlOverlay_Widget_AppCompat_ActionBar_TitleItem
 style RtlOverlay_Widget_AppCompat_DialogTitle_Icon
@@ -4501,6 +4513,8 @@ style ShapeAppearanceOverlay_MaterialComponents_MaterialCalendar_Day
 style ShapeAppearanceOverlay_MaterialComponents_MaterialCalendar_Window_Fullscreen
 style ShapeAppearanceOverlay_MaterialComponents_MaterialCalendar_Year
 style ShapeAppearanceOverlay_MaterialComponents_TextInputLayout_FilledBox
+style SplashTheme
+style TaskCountBadge
 style TextAppearance_App_Toolbar
 style TextAppearance_AppCompat
 style TextAppearance_AppCompat_Body1

@@ -11,8 +11,8 @@ import android.view.View;
 import android.widget.*;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.widget.SearchView;
-import androidx.core.view.WindowCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -27,30 +27,6 @@ import com.taskflow.app.data.model.Task;
 import com.taskflow.app.ui.adapter.TaskAdapter;
 import java.text.SimpleDateFormat;
 import java.util.*;
-import android.app.DatePickerDialog;
-import android.app.TimePickerDialog;
-import android.content.Intent;
-import android.content.SharedPreferences;
-import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
-import android.view.View;
-import android.widget.*;
-import androidx.appcompat.app.AlertDialog;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.app.AppCompatDelegate;
-import androidx.appcompat.widget.SearchView;
-import androidx.recyclerview.widget.*;
-import com.google.android.material.bottomnavigation.BottomNavigationView;
-import com.google.android.material.chip.Chip;
-import com.google.android.material.chip.ChipGroup;
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.taskflow.app.R;
-import com.taskflow.app.data.database.AppDatabase;
-import com.taskflow.app.data.model.Task;
-import com.taskflow.app.ui.adapter.TaskAdapter;
-import java.text.SimpleDateFormat;
-import java.util.*;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -59,7 +35,6 @@ public class MainActivity extends AppCompatActivity {
     private AppDatabase database;
     private String currentFilter = "all";
     private SharedPreferences prefs;
-    private TextView subtitleText;
     private SearchView searchView;
 
     @Override
@@ -76,19 +51,23 @@ public class MainActivity extends AppCompatActivity {
         }
 
         super.onCreate(savedInstanceState);
-        WindowCompat.setDecorFitsSystemWindows(getWindow(), false);
         setContentView(R.layout.activity_main);
+
+        // Настройка Toolbar
+        androidx.appcompat.widget.Toolbar toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
 
         database = AppDatabase.getInstance(this);
 
-        recyclerView = findViewById(R.id.recyclerView);
+        // Инициализация тестовых данных при первом запуске
+        initializeTestData();
 
+        recyclerView = findViewById(R.id.recyclerView);
         FloatingActionButton fab = findViewById(R.id.fab);
 
         setupAdapter();
         setupRecyclerView();
         setupCategoryChips();
-        //updateSubtitle();
 
         fab.setOnClickListener(v -> {
             animateFab(fab);
@@ -97,6 +76,125 @@ public class MainActivity extends AppCompatActivity {
 
         setupBottomNav();
         loadTasks();
+    }
+
+    private void initializeTestData() {
+        // Проверяем, были ли уже добавлены тестовые данные
+        boolean isFirstRun = prefs.getBoolean("first_run", true);
+        
+        if (isFirstRun) {
+            new Thread(() -> {
+                List<Task> testTasks = createTestTasks();
+                for (Task task : testTasks) {
+                    database.taskDao().insertTask(task);
+                }
+                
+                runOnUiThread(() -> {
+                    prefs.edit().putBoolean("first_run", false).apply();
+                    loadTasks();
+                    Toast.makeText(this, "Добро пожаловать! Добавлены тестовые задачи", Toast.LENGTH_LONG).show();
+                });
+            }).start();
+        }
+    }
+
+    private List<Task> createTestTasks() {
+        List<Task> tasks = new ArrayList<>();
+        Calendar cal = Calendar.getInstance();
+        
+        // Задача 1: Работа - высокий приоритет
+        Task task1 = new Task("Подготовить презентацию для клиента", "Работа", "high");
+        task1.setCategory("work");
+        task1.setDescription("Создать впечатляющую презентацию с графиками и цифрами");
+        cal.add(Calendar.HOUR, 4);
+        task1.setDeadline(cal.getTimeInMillis());
+        task1.setHasReminder(true);
+        task1.setFavorite(true);
+        tasks.add(task1);
+
+        // Задача 2: Личное - средний приоритет
+        Task task2 = new Task("Позвонить маме", "Семья", "medium");
+        task2.setCategory("personal");
+        task2.setDescription("Не забыть поздравить с днем рождения");
+        cal = Calendar.getInstance();
+        cal.add(Calendar.DAY_OF_MONTH, 1);
+        task2.setDeadline(cal.getTimeInMillis());
+        task2.setHasReminder(true);
+        tasks.add(task2);
+
+        // Задача 3: Покупки - низкий приоритет
+        Task task3 = new Task("Купить продукты на неделю", "Дом", "low");
+        task3.setCategory("shopping");
+        task3.setDescription("Молоко, хлеб, овощи, фрукты");
+        List<String> subtasks = new ArrayList<>();
+        subtasks.add("Молоко 2л");
+        subtasks.add("Хлеб");
+        subtasks.add("Овощи");
+        subtasks.add("Фрукты");
+        task3.setSubtasks(subtasks);
+        tasks.add(task3);
+
+        // Задача 4: Здоровье - высокий приоритет
+        Task task4 = new Task("Записаться к стоматологу", "Здоровье", "high");
+        task4.setCategory("health");
+        task4.setDescription("Плановый осмотр раз в полгода");
+        cal = Calendar.getInstance();
+        cal.add(Calendar.DAY_OF_MONTH, 2);
+        task4.setDeadline(cal.getTimeInMillis());
+        tasks.add(task4);
+
+        // Задача 5: Работа - завершенная задача
+        Task task5 = new Task("Отправить отчет руководителю", "Работа", "medium");
+        task5.setCategory("work");
+        task5.setCompleted(true);
+        task5.setDescription("Ежемесячный отчет о проделанной работе");
+        tasks.add(task5);
+
+        // Задача 6: Личное - хобби
+        Task task6 = new Task("Прочитать главу из книги", "Саморазвитие", "low");
+        task6.setCategory("personal");
+        task6.setDescription("Продолжить чтение 'Атомные привычки'");
+        task6.setRepeatType("daily");
+        tasks.add(task6);
+
+        // Задача 7: Работа - встреча
+        Task task7 = new Task("Встреча с командой", "Работа", "high");
+        task7.setCategory("work");
+        task7.setDescription("Обсуждение нового проекта");
+        cal = Calendar.getInstance();
+        cal.add(Calendar.HOUR, 2);
+        task7.setDeadline(cal.getTimeInMillis());
+        task7.setHasReminder(true);
+        task7.setFavorite(true);
+        tasks.add(task7);
+
+        // Задача 8: Здоровье - тренировка
+        Task task8 = new Task("Тренировка в зале", "Спорт", "medium");
+        task8.setCategory("health");
+        task8.setDescription("Кардио + силовые упражнения");
+        task8.setRepeatType("daily");
+        cal = Calendar.getInstance();
+        cal.add(Calendar.HOUR, 6);
+        task8.setDeadline(cal.getTimeInMillis());
+        tasks.add(task8);
+
+        // Задача 9: Личное
+        Task task9 = new Task("Организовать рабочий стол", "Дом", "low");
+        task9.setCategory("personal");
+        task9.setDescription("Навести порядок и выбросить ненужное");
+        tasks.add(task9);
+
+        // Задача 10: Работа - обучение
+        Task task10 = new Task("Пройти курс по Android", "Обучение", "medium");
+        task10.setCategory("work");
+        task10.setDescription("Изучить Material Design и Jetpack Compose");
+        task10.setFavorite(true);
+        cal = Calendar.getInstance();
+        cal.add(Calendar.WEEK_OF_YEAR, 1);
+        task10.setDeadline(cal.getTimeInMillis());
+        tasks.add(task10);
+
+        return tasks;
     }
 
     @Override
@@ -159,7 +257,6 @@ public class MainActivity extends AppCompatActivity {
                 task.setCompleted(!task.isCompleted());
                 database.taskDao().updateTask(task);
                 loadTasks();
-                //updateSubtitle();
                 showToast(task.isCompleted() ? "Готово! 🎉" : "Задача открыта");
             }
 
@@ -171,7 +268,6 @@ public class MainActivity extends AppCompatActivity {
                         .setPositiveButton("Удалить", (d, w) -> {
                             database.taskDao().deleteTask(task);
                             loadTasks();
-                            //updateSubtitle();
                             showToast("Удалено");
                         })
                         .setNegativeButton("Отмена", null)
@@ -239,22 +335,12 @@ public class MainActivity extends AppCompatActivity {
         }
 
         adapter.setTasks(tasks);
-        //updateSubtitle();
     }
 
     private void searchTasks(String query) {
         adapter.setTasks(database.taskDao().searchTasks(query));
     }
-/*
-    private void updateSubtitle() {
-        int active = database.taskDao().getActiveTaskCount();
-        int completed = database.taskDao().getCompletedTaskCount();
 
-        String subtitle = String.format(Locale.getDefault(),
-                "%d активных • %d выполнено", active, completed);
-        subtitleText.setText(subtitle);
-    }
-*/
     private void showAddDialog() {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         View dialogView = getLayoutInflater().inflate(R.layout.dialog_add_task, null);
@@ -272,13 +358,13 @@ public class MainActivity extends AppCompatActivity {
                 R.array.priority_array, android.R.layout.simple_spinner_item);
         priorityAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         prioritySpinner.setAdapter(priorityAdapter);
-        prioritySpinner.setSelection(1); // По умолчанию "Средний"
+        prioritySpinner.setSelection(1);
 
         ArrayAdapter<CharSequence> categoryAdapter = ArrayAdapter.createFromResource(this,
                 R.array.category_array, android.R.layout.simple_spinner_item);
         categoryAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         categorySpinner.setAdapter(categoryAdapter);
-        categorySpinner.setSelection(1); // По умолчанию "Личное"
+        categorySpinner.setSelection(1);
 
         final long[] selectedDeadline = {0};
 
@@ -332,7 +418,96 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void showEditDialog(Task task) {
-        Toast.makeText(this, "Диалог редактирования задачи", Toast.LENGTH_SHORT).show();
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        View dialogView = getLayoutInflater().inflate(R.layout.dialog_add_task, null);
+
+        EditText titleInput = dialogView.findViewById(R.id.titleInput);
+        EditText projectInput = dialogView.findViewById(R.id.projectInput);
+        Spinner prioritySpinner = dialogView.findViewById(R.id.prioritySpinner);
+        Spinner categorySpinner = dialogView.findViewById(R.id.categorySpinner);
+        TextView deadlineText = dialogView.findViewById(R.id.deadlineText);
+        Button setDeadlineBtn = dialogView.findViewById(R.id.setDeadlineBtn);
+        CheckBox reminderCheckBox = dialogView.findViewById(R.id.reminderCheckBox);
+
+        // Заполняем существующими данными
+        titleInput.setText(task.getTitle());
+        projectInput.setText(task.getProject());
+        reminderCheckBox.setChecked(task.hasReminder());
+
+        // Настройка спиннеров
+        ArrayAdapter<CharSequence> priorityAdapter = ArrayAdapter.createFromResource(this,
+                R.array.priority_array, android.R.layout.simple_spinner_item);
+        priorityAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        prioritySpinner.setAdapter(priorityAdapter);
+        prioritySpinner.setSelection(getPriorityPosition(task.getPriority()));
+
+        ArrayAdapter<CharSequence> categoryAdapter = ArrayAdapter.createFromResource(this,
+                R.array.category_array, android.R.layout.simple_spinner_item);
+        categoryAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        categorySpinner.setAdapter(categoryAdapter);
+        categorySpinner.setSelection(getCategoryPosition(task.getCategory()));
+
+        final long[] selectedDeadline = {task.getDeadline()};
+
+        // Показываем текущий дедлайн если есть
+        if (task.getDeadline() > 0) {
+            SimpleDateFormat sdf = new SimpleDateFormat("dd.MM.yyyy HH:mm", Locale.getDefault());
+            deadlineText.setText("Дедлайн: " + sdf.format(new Date(task.getDeadline())));
+            deadlineText.setVisibility(View.VISIBLE);
+        }
+
+        setDeadlineBtn.setOnClickListener(v -> {
+            Calendar calendar = Calendar.getInstance();
+            if (selectedDeadline[0] > 0) {
+                calendar.setTimeInMillis(selectedDeadline[0]);
+            }
+
+            new DatePickerDialog(this, (view, year, month, day) -> {
+                new TimePickerDialog(this, (timeView, hour, minute) -> {
+                    calendar.set(year, month, day, hour, minute);
+                    selectedDeadline[0] = calendar.getTimeInMillis();
+
+                    SimpleDateFormat sdf = new SimpleDateFormat("dd.MM.yyyy HH:mm", Locale.getDefault());
+                    deadlineText.setText("Дедлайн: " + sdf.format(calendar.getTime()));
+                    deadlineText.setVisibility(View.VISIBLE);
+                }, calendar.get(Calendar.HOUR_OF_DAY), calendar.get(Calendar.MINUTE), true).show();
+            }, calendar.get(Calendar.YEAR), calendar.get(Calendar.MONTH), calendar.get(Calendar.DAY_OF_MONTH)).show();
+        });
+
+        builder.setTitle("Редактировать задачу")
+                .setView(dialogView)
+                .setPositiveButton("Сохранить", (d, w) -> {
+                    String title = titleInput.getText().toString().trim();
+                    String project = projectInput.getText().toString().trim();
+
+                    if (!title.isEmpty()) {
+                        if (project.isEmpty()) project = "Без проекта";
+
+                        String priority = prioritySpinner.getSelectedItem().toString().toLowerCase();
+                        if (priority.equals("высокий")) priority = "high";
+                        else if (priority.equals("средний")) priority = "medium";
+                        else if (priority.equals("низкий")) priority = "low";
+
+                        String category = getCategoryValue(categorySpinner.getSelectedItemPosition());
+
+                        task.setTitle(title);
+                        task.setProject(project);
+                        task.setPriority(priority);
+                        task.setCategory(category);
+                        task.setDeadline(selectedDeadline[0]);
+                        task.setHasReminder(reminderCheckBox.isChecked());
+
+                        database.taskDao().updateTask(task);
+                        loadTasks();
+                        Toast.makeText(this, "Задача обновлена! ✓", Toast.LENGTH_SHORT).show();
+                    } else {
+                        Toast.makeText(this, "Введите название задачи", Toast.LENGTH_SHORT).show();
+                    }
+                })
+                .setNegativeButton("Отмена", null);
+
+        AlertDialog dialog = builder.create();
+        dialog.show();
     }
 
     private void showFilterDialog() {
@@ -421,7 +596,7 @@ public class MainActivity extends AppCompatActivity {
         if (position >= 0 && position < values.length) {
             return values[position];
         }
-        return "personal"; // default
+        return "personal";
     }
 
     private int getCategoryPosition(String category) {
@@ -429,7 +604,7 @@ public class MainActivity extends AppCompatActivity {
         for (int i = 0; i < values.length; i++) {
             if (values[i].equals(category)) return i;
         }
-        return 1; // default personal
+        return 1;
     }
 
     private int getPriorityPosition(String priority) {
@@ -437,6 +612,6 @@ public class MainActivity extends AppCompatActivity {
         for (int i = 0; i < values.length; i++) {
             if (values[i].equals(priority)) return i;
         }
-        return 1; // default medium
+        return 1;
     }
-}  // Закрывающая скобка класса
+}

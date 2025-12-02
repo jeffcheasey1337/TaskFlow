@@ -1,218 +1,242 @@
 [
     {
-        "merged": "C:\\Users\\Ilya\\.gradle\\daemon\\8.7\\com.taskflow.app-debug-35:\\layout_activity_main.xml.flat",
-        "source": "C:\\Users\\Ilya\\.gradle\\daemon\\8.7\\com.taskflow.app-main-37:\\layout\\activity_main.xml"
+        "merged": "com.taskflow.app-debug-35:/menu_main_menu.xml.flat",
+        "source": "com.taskflow.app-main-37:/menu/main_menu.xml"
     },
     {
-        "merged": "C:\\Users\\Ilya\\.gradle\\daemon\\8.7\\com.taskflow.app-debug-35:\\layout_activity_statistics.xml.flat",
-        "source": "C:\\Users\\Ilya\\.gradle\\daemon\\8.7\\com.taskflow.app-main-37:\\layout\\activity_statistics.xml"
+        "merged": "com.taskflow.app-debug-35:/drawable_ic_delete.xml.flat",
+        "source": "com.taskflow.app-main-37:/drawable/ic_delete.xml"
     },
     {
-        "merged": "C:\\Users\\Ilya\\.gradle\\daemon\\8.7\\com.taskflow.app-debug-35:\\color_bottom_nav_color.xml.flat",
-        "source": "C:\\Users\\Ilya\\.gradle\\daemon\\8.7\\com.taskflow.app-main-37:\\color\\bottom_nav_color.xml"
+        "merged": "com.taskflow.app-debug-35:/drawable-night_glass_bottom_nav_background.xml.flat",
+        "source": "com.taskflow.app-main-37:/drawable-night/glass_bottom_nav_background.xml"
     },
     {
-        "merged": "C:\\Users\\Ilya\\.gradle\\daemon\\8.7\\com.taskflow.app-debug-35:\\drawable_ic_chevron_right.xml.flat",
-        "source": "C:\\Users\\Ilya\\.gradle\\daemon\\8.7\\com.taskflow.app-main-37:\\drawable\\ic_chevron_right.xml"
+        "merged": "com.taskflow.app-debug-35:/layout_dialog_add_task.xml.flat",
+        "source": "com.taskflow.app-main-37:/layout/dialog_add_task.xml"
     },
     {
-        "merged": "C:\\Users\\Ilya\\.gradle\\daemon\\8.7\\com.taskflow.app-debug-35:\\layout_activity_splash.xml.flat",
-        "source": "C:\\Users\\Ilya\\.gradle\\daemon\\8.7\\com.taskflow.app-main-37:\\layout\\activity_splash.xml"
+        "merged": "com.taskflow.app-debug-35:/drawable_ic_chevron_right.xml.flat",
+        "source": "com.taskflow.app-main-37:/drawable/ic_chevron_right.xml"
     },
     {
-        "merged": "C:\\Users\\Ilya\\.gradle\\daemon\\8.7\\com.taskflow.app-debug-35:\\drawable-night_glass_bottom_nav_background.xml.flat",
-        "source": "C:\\Users\\Ilya\\.gradle\\daemon\\8.7\\com.taskflow.app-main-37:\\drawable-night\\glass_bottom_nav_background.xml"
+        "merged": "com.taskflow.app-debug-35:/drawable_ic_calendar.xml.flat",
+        "source": "com.taskflow.app-main-37:/drawable/ic_calendar.xml"
     },
     {
-        "merged": "C:\\Users\\Ilya\\.gradle\\daemon\\8.7\\com.taskflow.app-debug-35:\\layout_item_task.xml.flat",
-        "source": "C:\\Users\\Ilya\\.gradle\\daemon\\8.7\\com.taskflow.app-main-37:\\layout\\item_task.xml"
+        "merged": "com.taskflow.app-debug-35:/drawable_ic_timer.xml.flat",
+        "source": "com.taskflow.app-main-37:/drawable/ic_timer.xml"
     },
     {
-        "merged": "C:\\Users\\Ilya\\.gradle\\daemon\\8.7\\com.taskflow.app-debug-35:\\layout_item_calendar_day.xml.flat",
-        "source": "C:\\Users\\Ilya\\.gradle\\daemon\\8.7\\com.taskflow.app-main-37:\\layout\\item_calendar_day.xml"
+        "merged": "com.taskflow.app-debug-35:/color_chip_text_color.xml.flat",
+        "source": "com.taskflow.app-main-37:/color/chip_text_color.xml"
     },
     {
-        "merged": "C:\\Users\\Ilya\\.gradle\\daemon\\8.7\\com.taskflow.app-debug-35:\\drawable_gradient_background.xml.flat",
-        "source": "C:\\Users\\Ilya\\.gradle\\daemon\\8.7\\com.taskflow.app-main-37:\\drawable\\gradient_background.xml"
+        "merged": "com.taskflow.app-debug-35:/drawable_icon_button_background.xml.flat",
+        "source": "com.taskflow.app-main-37:/drawable/icon_button_background.xml"
     },
     {
-        "merged": "C:\\Users\\Ilya\\.gradle\\daemon\\8.7\\com.taskflow.app-debug-35:\\drawable-night_glass_card_background.xml.flat",
-        "source": "C:\\Users\\Ilya\\.gradle\\daemon\\8.7\\com.taskflow.app-main-37:\\drawable-night\\glass_card_background.xml"
+        "merged": "com.taskflow.app-debug-35:/color_bottom_nav_color.xml.flat",
+        "source": "com.taskflow.app-main-37:/color/bottom_nav_color.xml"
     },
     {
-        "merged": "C:\\Users\\Ilya\\.gradle\\daemon\\8.7\\com.taskflow.app-debug-35:\\drawable_glass_card_background.xml.flat",
-        "source": "C:\\Users\\Ilya\\.gradle\\daemon\\8.7\\com.taskflow.app-main-37:\\drawable\\glass_card_background.xml"
+        "merged": "com.taskflow.app-debug-35:/drawable_ic_launcher_foreground.xml.flat",
+        "source": "com.taskflow.app-main-37:/drawable/ic_launcher_foreground.xml"
     },
     {
-        "merged": "C:\\Users\\Ilya\\.gradle\\daemon\\8.7\\com.taskflow.app-debug-35:\\drawable_ic_chevron_left.xml.flat",
-        "source": "C:\\Users\\Ilya\\.gradle\\daemon\\8.7\\com.taskflow.app-main-37:\\drawable\\ic_chevron_left.xml"
+        "merged": "com.taskflow.app-debug-35:/menu_bottom_nav_menu.xml.flat",
+        "source": "com.taskflow.app-main-37:/menu/bottom_nav_menu.xml"
     },
     {
-        "merged": "C:\\Users\\Ilya\\.gradle\\daemon\\8.7\\com.taskflow.app-debug-35:\\layout_dialog_add_task.xml.flat",
-        "source": "C:\\Users\\Ilya\\.gradle\\daemon\\8.7\\com.taskflow.app-main-37:\\layout\\dialog_add_task.xml"
+        "merged": "com.taskflow.app-debug-35:/drawable-night_glass_card_background.xml.flat",
+        "source": "com.taskflow.app-main-37:/drawable-night/glass_card_background.xml"
     },
     {
-        "merged": "C:\\Users\\Ilya\\.gradle\\daemon\\8.7\\com.taskflow.app-debug-35:\\drawable_glass_chip_selected.xml.flat",
-        "source": "C:\\Users\\Ilya\\.gradle\\daemon\\8.7\\com.taskflow.app-main-37:\\drawable\\glass_chip_selected.xml"
+        "merged": "com.taskflow.app-debug-35:/drawable_splash_dot.xml.flat",
+        "source": "com.taskflow.app-main-37:/drawable/splash_dot.xml"
     },
     {
-        "merged": "C:\\Users\\Ilya\\.gradle\\daemon\\8.7\\com.taskflow.app-debug-35:\\drawable_ic_bell.xml.flat",
-        "source": "C:\\Users\\Ilya\\.gradle\\daemon\\8.7\\com.taskflow.app-main-37:\\drawable\\ic_bell.xml"
+        "merged": "com.taskflow.app-debug-35:/drawable_glass_chip_background.xml.flat",
+        "source": "com.taskflow.app-main-37:/drawable/glass_chip_background.xml"
     },
     {
-        "merged": "C:\\Users\\Ilya\\.gradle\\daemon\\8.7\\com.taskflow.app-debug-35:\\layout_item_achievement.xml.flat",
-        "source": "C:\\Users\\Ilya\\.gradle\\daemon\\8.7\\com.taskflow.app-main-37:\\layout\\item_achievement.xml"
+        "merged": "com.taskflow.app-debug-35:/layout_item_achievement.xml.flat",
+        "source": "com.taskflow.app-main-37:/layout/item_achievement.xml"
     },
     {
-        "merged": "C:\\Users\\Ilya\\.gradle\\daemon\\8.7\\com.taskflow.app-debug-35:\\color_chip_text_color.xml.flat",
-        "source": "C:\\Users\\Ilya\\.gradle\\daemon\\8.7\\com.taskflow.app-main-37:\\color\\chip_text_color.xml"
+        "merged": "com.taskflow.app-debug-35:/drawable_project_tag_background.xml.flat",
+        "source": "com.taskflow.app-main-37:/drawable/project_tag_background.xml"
     },
     {
-        "merged": "C:\\Users\\Ilya\\.gradle\\daemon\\8.7\\com.taskflow.app-debug-35:\\drawable_settings_item_background.xml.flat",
-        "source": "C:\\Users\\Ilya\\.gradle\\daemon\\8.7\\com.taskflow.app-main-37:\\drawable\\settings_item_background.xml"
+        "merged": "com.taskflow.app-debug-35:/layout_item_calendar_day.xml.flat",
+        "source": "com.taskflow.app-main-37:/layout/item_calendar_day.xml"
     },
     {
-        "merged": "C:\\Users\\Ilya\\.gradle\\daemon\\8.7\\com.taskflow.app-debug-35:\\drawable_glass_chip_background.xml.flat",
-        "source": "C:\\Users\\Ilya\\.gradle\\daemon\\8.7\\com.taskflow.app-main-37:\\drawable\\glass_chip_background.xml"
+        "merged": "com.taskflow.app-debug-35:/layout_activity_main.xml.flat",
+        "source": "com.taskflow.app-main-37:/layout/activity_main.xml"
     },
     {
-        "merged": "C:\\Users\\Ilya\\.gradle\\daemon\\8.7\\com.taskflow.app-debug-35:\\drawable-night_glass_dialog_background.xml.flat",
-        "source": "C:\\Users\\Ilya\\.gradle\\daemon\\8.7\\com.taskflow.app-main-37:\\drawable-night\\glass_dialog_background.xml"
+        "merged": "com.taskflow.app-debug-35:/layout_item_task.xml.flat",
+        "source": "com.taskflow.app-main-37:/layout/item_task.xml"
+    },
+    {
+        "merged": "com.taskflow.app-debug-35:/drawable_ic_dark_mode.xml.flat",
+        "source": "com.taskflow.app-main-37:/drawable/ic_dark_mode.xml"
+    },
+    {
+        "merged": "com.taskflow.app-debug-35:/color_switch_track_color.xml.flat",
+        "source": "com.taskflow.app-main-37:/color/switch_track_color.xml"
     },
     {
         "merged": "com.taskflow.app-debug-35:/layout_activity_statistics.xml.flat",
         "source": "com.taskflow.app-main-37:/layout/activity_statistics.xml"
     },
     {
-        "merged": "C:\\Users\\Ilya\\.gradle\\daemon\\8.7\\com.taskflow.app-debug-35:\\drawable_glass_bottom_nav_background.xml.flat",
-        "source": "C:\\Users\\Ilya\\.gradle\\daemon\\8.7\\com.taskflow.app-main-37:\\drawable\\glass_bottom_nav_background.xml"
+        "merged": "com.taskflow.app-debug-35:/drawable_ic_launcher_background.xml.flat",
+        "source": "com.taskflow.app-main-37:/drawable/ic_launcher_background.xml"
     },
     {
-        "merged": "C:\\Users\\Ilya\\.gradle\\daemon\\8.7\\com.taskflow.app-debug-35:\\color_chip_background_color.xml.flat",
-        "source": "C:\\Users\\Ilya\\.gradle\\daemon\\8.7\\com.taskflow.app-main-37:\\color\\chip_background_color.xml"
+        "merged": "com.taskflow.app-debug-35:/drawable_custom_checkbox.xml.flat",
+        "source": "com.taskflow.app-main-37:/drawable/custom_checkbox.xml"
     },
     {
-        "merged": "C:\\Users\\Ilya\\.gradle\\daemon\\8.7\\com.taskflow.app-debug-35:\\color_chip_stroke_color.xml.flat",
-        "source": "C:\\Users\\Ilya\\.gradle\\daemon\\8.7\\com.taskflow.app-main-37:\\color\\chip_stroke_color.xml"
+        "merged": "com.taskflow.app-debug-35:/drawable_glass_bottom_nav_background.xml.flat",
+        "source": "com.taskflow.app-main-37:/drawable/glass_bottom_nav_background.xml"
     },
     {
-        "merged": "C:\\Users\\Ilya\\.gradle\\daemon\\8.7\\com.taskflow.app-debug-35:\\drawable_ic_trophy.xml.flat",
-        "source": "C:\\Users\\Ilya\\.gradle\\daemon\\8.7\\com.taskflow.app-main-37:\\drawable\\ic_trophy.xml"
+        "merged": "com.taskflow.app-debug-35:/drawable_splash_gradient.xml.flat",
+        "source": "com.taskflow.app-main-37:/drawable/splash_gradient.xml"
     },
     {
-        "merged": "C:\\Users\\Ilya\\.gradle\\daemon\\8.7\\com.taskflow.app-debug-35:\\layout_activity_pomodoro.xml.flat",
-        "source": "C:\\Users\\Ilya\\.gradle\\daemon\\8.7\\com.taskflow.app-main-37:\\layout\\activity_pomodoro.xml"
+        "merged": "com.taskflow.app-debug-35:/drawable_ic_filter.xml.flat",
+        "source": "com.taskflow.app-main-37:/drawable/ic_filter.xml"
     },
     {
-        "merged": "C:\\Users\\Ilya\\.gradle\\daemon\\8.7\\com.taskflow.app-debug-35:\\drawable_ic_dark_mode.xml.flat",
-        "source": "C:\\Users\\Ilya\\.gradle\\daemon\\8.7\\com.taskflow.app-main-37:\\drawable\\ic_dark_mode.xml"
+        "merged": "com.taskflow.app-debug-35:/mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "com.taskflow.app-main-37:/mipmap-anydpi-v26/ic_launcher_round.xml"
     },
     {
-        "merged": "C:\\Users\\Ilya\\.gradle\\daemon\\8.7\\com.taskflow.app-debug-35:\\layout_dialog_settings.xml.flat",
-        "source": "C:\\Users\\Ilya\\.gradle\\daemon\\8.7\\com.taskflow.app-main-37:\\layout\\dialog_settings.xml"
+        "merged": "com.taskflow.app-debug-35:/drawable_ic_app_logo.xml.flat",
+        "source": "com.taskflow.app-main-37:/drawable/ic_app_logo.xml"
     },
     {
-        "merged": "C:\\Users\\Ilya\\.gradle\\daemon\\8.7\\com.taskflow.app-debug-35:\\drawable_ripple_effect.xml.flat",
-        "source": "C:\\Users\\Ilya\\.gradle\\daemon\\8.7\\com.taskflow.app-main-37:\\drawable\\ripple_effect.xml"
+        "merged": "com.taskflow.app-debug-35:/drawable_ic_trophy.xml.flat",
+        "source": "com.taskflow.app-main-37:/drawable/ic_trophy.xml"
     },
     {
-        "merged": "C:\\Users\\Ilya\\.gradle\\daemon\\8.7\\com.taskflow.app-debug-35:\\drawable_ic_edit.xml.flat",
-        "source": "C:\\Users\\Ilya\\.gradle\\daemon\\8.7\\com.taskflow.app-main-37:\\drawable\\ic_edit.xml"
+        "merged": "com.taskflow.app-debug-35:/drawable_ic_bell.xml.flat",
+        "source": "com.taskflow.app-main-37:/drawable/ic_bell.xml"
     },
     {
-        "merged": "C:\\Users\\Ilya\\.gradle\\daemon\\8.7\\com.taskflow.app-debug-35:\\drawable_ic_back.xml.flat",
-        "source": "C:\\Users\\Ilya\\.gradle\\daemon\\8.7\\com.taskflow.app-main-37:\\drawable\\ic_back.xml"
+        "merged": "com.taskflow.app-debug-35:/drawable_ripple_effect.xml.flat",
+        "source": "com.taskflow.app-main-37:/drawable/ripple_effect.xml"
     },
     {
-        "merged": "C:\\Users\\Ilya\\.gradle\\daemon\\8.7\\com.taskflow.app-debug-35:\\menu_main_menu.xml.flat",
-        "source": "C:\\Users\\Ilya\\.gradle\\daemon\\8.7\\com.taskflow.app-main-37:\\menu\\main_menu.xml"
+        "merged": "com.taskflow.app-debug-35:/drawable_glass_card_background.xml.flat",
+        "source": "com.taskflow.app-main-37:/drawable/glass_card_background.xml"
     },
     {
-        "merged": "C:\\Users\\Ilya\\.gradle\\daemon\\8.7\\com.taskflow.app-debug-35:\\drawable_task_indicator.xml.flat",
-        "source": "C:\\Users\\Ilya\\.gradle\\daemon\\8.7\\com.taskflow.app-main-37:\\drawable\\task_indicator.xml"
+        "merged": "com.taskflow.app-debug-35:/drawable_priority_indicator.xml.flat",
+        "source": "com.taskflow.app-main-37:/drawable/priority_indicator.xml"
     },
     {
-        "merged": "C:\\Users\\Ilya\\.gradle\\daemon\\8.7\\com.taskflow.app-debug-35:\\drawable_priority_indicator.xml.flat",
-        "source": "C:\\Users\\Ilya\\.gradle\\daemon\\8.7\\com.taskflow.app-main-37:\\drawable\\priority_indicator.xml"
+        "merged": "com.taskflow.app-debug-35:/drawable_deadline_display_background.xml.flat",
+        "source": "com.taskflow.app-main-37:/drawable/deadline_display_background.xml"
     },
     {
-        "merged": "C:\\Users\\Ilya\\.gradle\\daemon\\8.7\\com.taskflow.app-debug-35:\\drawable_deadline_display_background.xml.flat",
-        "source": "C:\\Users\\Ilya\\.gradle\\daemon\\8.7\\com.taskflow.app-main-37:\\drawable\\deadline_display_background.xml"
+        "merged": "com.taskflow.app-debug-35:/drawable-night_gradient_background.xml.flat",
+        "source": "com.taskflow.app-main-37:/drawable-night/gradient_background.xml"
     },
     {
-        "merged": "C:\\Users\\Ilya\\.gradle\\daemon\\8.7\\com.taskflow.app-debug-35:\\drawable_spinner_background.xml.flat",
-        "source": "C:\\Users\\Ilya\\.gradle\\daemon\\8.7\\com.taskflow.app-main-37:\\drawable\\spinner_background.xml"
+        "merged": "com.taskflow.app-debug-35:/drawable_ic_add.xml.flat",
+        "source": "com.taskflow.app-main-37:/drawable/ic_add.xml"
     },
     {
-        "merged": "C:\\Users\\Ilya\\.gradle\\daemon\\8.7\\com.taskflow.app-debug-35:\\drawable_icon_button_background.xml.flat",
-        "source": "C:\\Users\\Ilya\\.gradle\\daemon\\8.7\\com.taskflow.app-main-37:\\drawable\\icon_button_background.xml"
+        "merged": "com.taskflow.app-debug-35:/drawable_circular_progress.xml.flat",
+        "source": "com.taskflow.app-main-37:/drawable/circular_progress.xml"
     },
     {
-        "merged": "C:\\Users\\Ilya\\.gradle\\daemon\\8.7\\com.taskflow.app-debug-35:\\drawable_circular_progress.xml.flat",
-        "source": "C:\\Users\\Ilya\\.gradle\\daemon\\8.7\\com.taskflow.app-main-37:\\drawable\\circular_progress.xml"
+        "merged": "com.taskflow.app-debug-35:/drawable_task_indicator.xml.flat",
+        "source": "com.taskflow.app-main-37:/drawable/task_indicator.xml"
     },
     {
-        "merged": "C:\\Users\\Ilya\\.gradle\\daemon\\8.7\\com.taskflow.app-debug-35:\\drawable_ic_calendar.xml.flat",
-        "source": "C:\\Users\\Ilya\\.gradle\\daemon\\8.7\\com.taskflow.app-main-37:\\drawable\\ic_calendar.xml"
+        "merged": "com.taskflow.app-debug-35:/drawable-night_glass_dialog_background.xml.flat",
+        "source": "com.taskflow.app-main-37:/drawable-night/glass_dialog_background.xml"
     },
     {
-        "merged": "C:\\Users\\Ilya\\.gradle\\daemon\\8.7\\com.taskflow.app-debug-35:\\drawable_glass_dialog_background.xml.flat",
-        "source": "C:\\Users\\Ilya\\.gradle\\daemon\\8.7\\com.taskflow.app-main-37:\\drawable\\glass_dialog_background.xml"
+        "merged": "com.taskflow.app-debug-35:/drawable_ic_back.xml.flat",
+        "source": "com.taskflow.app-main-37:/drawable/ic_back.xml"
     },
     {
-        "merged": "C:\\Users\\Ilya\\.gradle\\daemon\\8.7\\com.taskflow.app-debug-35:\\menu_bottom_nav_menu.xml.flat",
-        "source": "C:\\Users\\Ilya\\.gradle\\daemon\\8.7\\com.taskflow.app-main-37:\\menu\\bottom_nav_menu.xml"
+        "merged": "com.taskflow.app-debug-35:/layout_activity_calendar.xml.flat",
+        "source": "com.taskflow.app-main-37:/layout/activity_calendar.xml"
     },
     {
-        "merged": "C:\\Users\\Ilya\\.gradle\\daemon\\8.7\\com.taskflow.app-debug-35:\\drawable_ic_add.xml.flat",
-        "source": "C:\\Users\\Ilya\\.gradle\\daemon\\8.7\\com.taskflow.app-main-37:\\drawable\\ic_add.xml"
+        "merged": "com.taskflow.app-debug-35:/layout_dialog_settings.xml.flat",
+        "source": "com.taskflow.app-main-37:/layout/dialog_settings.xml"
     },
     {
-        "merged": "C:\\Users\\Ilya\\.gradle\\daemon\\8.7\\com.taskflow.app-debug-35:\\layout_activity_calendar.xml.flat",
-        "source": "C:\\Users\\Ilya\\.gradle\\daemon\\8.7\\com.taskflow.app-main-37:\\layout\\activity_calendar.xml"
+        "merged": "com.taskflow.app-debug-35:/drawable_glass_dialog_background.xml.flat",
+        "source": "com.taskflow.app-main-37:/drawable/glass_dialog_background.xml"
     },
     {
-        "merged": "C:\\Users\\Ilya\\.gradle\\daemon\\8.7\\com.taskflow.app-debug-35:\\drawable-night_gradient_background.xml.flat",
-        "source": "C:\\Users\\Ilya\\.gradle\\daemon\\8.7\\com.taskflow.app-main-37:\\drawable-night\\gradient_background.xml"
+        "merged": "com.taskflow.app-debug-35:/drawable_ic_clock.xml.flat",
+        "source": "com.taskflow.app-main-37:/drawable/ic_clock.xml"
     },
     {
-        "merged": "C:\\Users\\Ilya\\.gradle\\daemon\\8.7\\com.taskflow.app-debug-35:\\drawable_project_tag_background.xml.flat",
-        "source": "C:\\Users\\Ilya\\.gradle\\daemon\\8.7\\com.taskflow.app-main-37:\\drawable\\project_tag_background.xml"
+        "merged": "com.taskflow.app-debug-35:/mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "com.taskflow.app-main-37:/mipmap-anydpi-v26/ic_launcher.xml"
     },
     {
-        "merged": "C:\\Users\\Ilya\\.gradle\\daemon\\8.7\\com.taskflow.app-debug-35:\\drawable_custom_checkbox.xml.flat",
-        "source": "C:\\Users\\Ilya\\.gradle\\daemon\\8.7\\com.taskflow.app-main-37:\\drawable\\custom_checkbox.xml"
+        "merged": "com.taskflow.app-debug-35:/drawable_ic_edit.xml.flat",
+        "source": "com.taskflow.app-main-37:/drawable/ic_edit.xml"
     },
     {
-        "merged": "C:\\Users\\Ilya\\.gradle\\daemon\\8.7\\com.taskflow.app-debug-35:\\drawable_ic_chart.xml.flat",
-        "source": "C:\\Users\\Ilya\\.gradle\\daemon\\8.7\\com.taskflow.app-main-37:\\drawable\\ic_chart.xml"
+        "merged": "com.taskflow.app-debug-35:/drawable_ic_chart.xml.flat",
+        "source": "com.taskflow.app-main-37:/drawable/ic_chart.xml"
     },
     {
-        "merged": "C:\\Users\\Ilya\\.gradle\\daemon\\8.7\\com.taskflow.app-debug-35:\\drawable_ic_clock.xml.flat",
-        "source": "C:\\Users\\Ilya\\.gradle\\daemon\\8.7\\com.taskflow.app-main-37:\\drawable\\ic_clock.xml"
+        "merged": "com.taskflow.app-debug-35:/drawable_ic_chevron_left.xml.flat",
+        "source": "com.taskflow.app-main-37:/drawable/ic_chevron_left.xml"
     },
     {
-        "merged": "C:\\Users\\Ilya\\.gradle\\daemon\\8.7\\com.taskflow.app-debug-35:\\drawable_ic_filter.xml.flat",
-        "source": "C:\\Users\\Ilya\\.gradle\\daemon\\8.7\\com.taskflow.app-main-37:\\drawable\\ic_filter.xml"
+        "merged": "com.taskflow.app-debug-35:/drawable_glass_chip_selected.xml.flat",
+        "source": "com.taskflow.app-main-37:/drawable/glass_chip_selected.xml"
     },
     {
-        "merged": "C:\\Users\\Ilya\\.gradle\\daemon\\8.7\\com.taskflow.app-debug-35:\\color_switch_track_color.xml.flat",
-        "source": "C:\\Users\\Ilya\\.gradle\\daemon\\8.7\\com.taskflow.app-main-37:\\color\\switch_track_color.xml"
+        "merged": "com.taskflow.app-debug-35:/color_chip_background_color.xml.flat",
+        "source": "com.taskflow.app-main-37:/color/chip_background_color.xml"
     },
     {
-        "merged": "C:\\Users\\Ilya\\.gradle\\daemon\\8.7\\com.taskflow.app-debug-35:\\drawable_ic_today.xml.flat",
-        "source": "C:\\Users\\Ilya\\.gradle\\daemon\\8.7\\com.taskflow.app-main-37:\\drawable\\ic_today.xml"
+        "merged": "com.taskflow.app-debug-35:/layout_activity_achievements.xml.flat",
+        "source": "com.taskflow.app-main-37:/layout/activity_achievements.xml"
     },
     {
-        "merged": "C:\\Users\\Ilya\\.gradle\\daemon\\8.7\\com.taskflow.app-debug-35:\\drawable_ic_delete.xml.flat",
-        "source": "C:\\Users\\Ilya\\.gradle\\daemon\\8.7\\com.taskflow.app-main-37:\\drawable\\ic_delete.xml"
+        "merged": "com.taskflow.app-debug-35:/layout_activity_splash.xml.flat",
+        "source": "com.taskflow.app-main-37:/layout/activity_splash.xml"
     },
     {
-        "merged": "C:\\Users\\Ilya\\.gradle\\daemon\\8.7\\com.taskflow.app-debug-35:\\layout_activity_achievements.xml.flat",
-        "source": "C:\\Users\\Ilya\\.gradle\\daemon\\8.7\\com.taskflow.app-main-37:\\layout\\activity_achievements.xml"
+        "merged": "com.taskflow.app-debug-35:/drawable_gradient_background.xml.flat",
+        "source": "com.taskflow.app-main-37:/drawable/gradient_background.xml"
     },
     {
-        "merged": "C:\\Users\\Ilya\\.gradle\\daemon\\8.7\\com.taskflow.app-debug-35:\\drawable_ic_timer.xml.flat",
-        "source": "C:\\Users\\Ilya\\.gradle\\daemon\\8.7\\com.taskflow.app-main-37:\\drawable\\ic_timer.xml"
+        "merged": "com.taskflow.app-debug-35:/drawable_settings_item_background.xml.flat",
+        "source": "com.taskflow.app-main-37:/drawable/settings_item_background.xml"
+    },
+    {
+        "merged": "com.taskflow.app-debug-35:/drawable_spinner_background.xml.flat",
+        "source": "com.taskflow.app-main-37:/drawable/spinner_background.xml"
+    },
+    {
+        "merged": "com.taskflow.app-debug-35:/layout_activity_pomodoro.xml.flat",
+        "source": "com.taskflow.app-main-37:/layout/activity_pomodoro.xml"
+    },
+    {
+        "merged": "com.taskflow.app-debug-35:/color_chip_stroke_color.xml.flat",
+        "source": "com.taskflow.app-main-37:/color/chip_stroke_color.xml"
+    },
+    {
+        "merged": "com.taskflow.app-debug-35:/drawable_ic_today.xml.flat",
+        "source": "com.taskflow.app-main-37:/drawable/ic_today.xml"
     }
 ]
